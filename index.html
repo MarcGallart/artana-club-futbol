@@ -36,39 +36,37 @@
             
             <div class="lg:col-span-2 bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700/50 overflow-x-auto">
                 <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-2 flex items-center gap-2">
-                    <i class="fas fa-football-ball text-yellow-400"></i> Calendario y Resultados Recientes
+                    <i class="fas fa-football-ball text-yellow-400"></i> Últimas Jornadas y Goleadores
                 </h3>
                 
                 <table class="w-full min-w-[550px] text-left border-collapse">
                     <thead>
                         <tr class="text-xs font-bold text-gray-400 uppercase border-b border-gray-700">
                             <th class="py-3 px-2">Jornada</th>
-                            <th class="py-3 px-2 text-center">Partido</th>
+                            <th class="py-3 px-2 text-center">Encuentro</th>
                             <th class="py-3 px-2 text-center">Resultado</th>
-                            <th class="py-3 px-2">Estado</th>
+                            <th class="py-3 px-2">Goleadores / Incidencias</th>
                         </tr>
                     </thead>
                     <tbody id="tabla-resultados" class="divide-y divide-gray-700/50 text-sm text-gray-200">
                         
                         <tr class="bg-yellow-500/5 hover:bg-yellow-500/10 transition-colors">
-                            <td class="py-4 px-2 font-bold text-yellow-400">
-                                <span>Jornada 26</span>
-                            </td>
+                            <td class="py-4 px-2 font-bold text-yellow-400">Jor. 26</td>
                             <td class="py-4 px-2 text-center font-bold">
                                 <span class="inline-block w-28 text-right pr-2 text-white">Artana C.F.</span>
                                 <span class="text-gray-500 text-xs px-1">vs</span>
-                                <span class="inline-block w-28 text-left pl-2 text-gray-400">Castellnovo</span>
+                                <span class="inline-block w-28 text-left pl-2 text-gray-400">C.F. Castellnovo</span>
                             </td>
                             <td class="py-4 px-2 text-center">
                                 <span class="bg-green-500/20 text-green-400 font-black py-1 px-3 rounded-lg border border-green-500/30">5 - 0</span>
                             </td>
-                            <td class="py-4 px-2 text-xs font-semibold text-green-400"><i class="fas fa-check-circle mr-1"></i> Finalizado</td>
+                            <td class="py-4 px-2 text-xs text-gray-300">
+                                <i class="fas fa-futbol text-yellow-400 mr-1"></i> Carda (2), Font (2), Ibáñez
+                            </td>
                         </tr>
 
                         <tr class="hover:bg-gray-750/30 transition-colors">
-                            <td class="py-4 px-2 text-gray-400">
-                                <span>Jornada 25</span>
-                            </td>
+                            <td class="py-4 px-2 text-gray-400">Jor. 25</td>
                             <td class="py-4 px-2 text-center font-bold">
                                 <span class="inline-block w-28 text-right pr-2 text-gray-400">Mare Nostrum</span>
                                 <span class="text-gray-500 text-xs px-1">vs</span>
@@ -77,13 +75,13 @@
                             <td class="py-4 px-2 text-center">
                                 <span class="bg-gray-700/50 text-gray-300 font-bold py-1 px-3 rounded-lg border border-gray-600">0 - 0</span>
                             </td>
-                            <td class="py-4 px-2 text-xs font-semibold text-gray-400">Finalizado</td>
+                            <td class="py-4 px-2 text-xs text-gray-400 italic">
+                                Sin goles. Gran trabajo defensivo.
+                            </td>
                         </tr>
 
                         <tr class="hover:bg-gray-750/30 transition-colors">
-                            <td class="py-4 px-2 text-gray-400">
-                                <span>Jornada 24</span>
-                            </td>
+                            <td class="py-4 px-2 text-gray-400">Jor. 24</td>
                             <td class="py-4 px-2 text-center font-bold">
                                 <span class="inline-block w-28 text-right pr-2 text-white">Artana C.F.</span>
                                 <span class="text-gray-500 text-xs px-1">vs</span>
@@ -92,22 +90,24 @@
                             <td class="py-4 px-2 text-center">
                                 <span class="bg-green-500/20 text-green-400 font-black py-1 px-3 rounded-lg border border-green-500/30">4 - 1</span>
                             </td>
-                            <td class="py-4 px-2 text-xs font-semibold text-gray-400">Finalizado</td>
+                            <td class="py-4 px-2 text-xs text-gray-300">
+                                <i class="fas fa-futbol text-yellow-400 mr-1"></i> Pla, Font, Silva, Nico
+                            </td>
                         </tr>
 
                         <tr class="hover:bg-gray-750/30 transition-colors">
-                            <td class="py-4 px-2 text-gray-400">
-                                <span>Jornada 23</span>
-                            </td>
+                            <td class="py-4 px-2 text-gray-400">Jor. 23</td>
                             <td class="py-4 px-2 text-center font-bold">
-                                <span class="inline-block w-28 text-right pr-2 text-white">Artana C.F.</span>
+                                <span class="inline-block w-28 text-right pr-2 text-gray-400">La Vilavella C.F.</span>
                                 <span class="text-gray-500 text-xs px-1">vs</span>
-                                <span class="inline-block w-28 text-left pl-2 text-gray-400">La Vilavella</span>
+                                <span class="inline-block w-28 text-left pl-2 text-white">Artana C.F.</span>
                             </td>
                             <td class="py-4 px-2 text-center">
-                                <span class="bg-green-500/20 text-green-400 font-black py-1 px-3 rounded-lg border border-green-500/30">1 - 0</span>
+                                <span class="bg-green-500/20 text-green-400 font-black py-1 px-3 rounded-lg border border-green-500/30">1 - 2</span>
                             </td>
-                            <td class="py-4 px-2 text-xs font-semibold text-gray-400">Finalizado</td>
+                            <td class="py-4 px-2 text-xs text-gray-300">
+                                <i class="fas fa-futbol text-yellow-400 mr-1"></i> Carda, Font
+                            </td>
                         </tr>
 
                     </tbody>
@@ -117,7 +117,7 @@
             <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700/50 flex flex-col justify-between">
                 <div>
                     <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-2 flex items-center gap-2">
-                        <i class="fas fa-trophy text-yellow-400"></i> Clasificación G3
+                        <i class="fas fa-trophy text-yellow-400"></i> Clasificación Real G3
                     </h3>
                     
                     <table class="w-full text-sm text-left">
@@ -131,33 +131,33 @@
                         </thead>
                         <tbody class="divide-y divide-gray-700/50 text-gray-300">
                             <tr class="border-l-4 border-transparent text-gray-400">
-                                <td class="py-3 text-center">4</td>
-                                <td class="py-3 font-semibold">Estivella C.F.</td>
-                                <td class="py-3 text-center font-bold">48</td>
+                                <td class="py-3 text-center">1</td>
+                                <td class="py-3 font-semibold">Biensa C.F.</td>
+                                <td class="py-3 text-center font-bold">59</td>
                                 <td class="py-3 text-center">26</td>
                             </tr>
                             <tr class="border-l-4 border-transparent text-gray-400">
-                                <td class="py-3 text-center">5</td>
-                                <td class="py-3 font-semibold">C.F. Faura</td>
-                                <td class="py-3 text-center font-bold">44</td>
+                                <td class="py-3 text-center">2</td>
+                                <td class="py-3 font-semibold">C.D. Jérica B</td>
+                                <td class="py-3 text-center font-bold">54</td>
                                 <td class="py-3 text-center">26</td>
                             </tr>
                             <tr class="bg-yellow-500/5 border-l-4 border-yellow-500">
-                                <td class="py-3 text-center font-black text-yellow-400">6</td>
+                                <td class="py-3 text-center font-black text-yellow-400">3</td>
                                 <td class="py-3 font-bold text-white">Artana C.F.</td>
-                                <td class="py-3 text-center font-black text-yellow-400">41</td>
+                                <td class="py-3 text-center font-black text-yellow-400">51</td>
                                 <td class="py-3 text-center text-gray-400">26</td>
                             </tr>
                             <tr class="border-l-4 border-transparent text-gray-500">
-                                <td class="py-3 text-center">7</td>
-                                <td class="py-3 font-semibold">C.A. Caudiel</td>
-                                <td class="py-3 text-center">38</td>
+                                <td class="py-3 text-center">4</td>
+                                <td class="py-3 font-semibold">C.F. Faura</td>
+                                <td class="py-3 text-center">45</td>
                                 <td class="py-3 text-center">26</td>
                             </tr>
                             <tr class="border-l-4 border-transparent text-gray-500">
-                                <td class="py-3 text-center">8</td>
-                                <td class="py-3 font-semibold">La Vilavella</td>
-                                <td class="py-3 text-center">35</td>
+                                <td class="py-3 text-center">5</td>
+                                <td class="py-3 font-semibold">C.F. Nules B</td>
+                                <td class="py-3 text-center">40</td>
                                 <td class="py-3 text-center">26</td>
                             </tr>
                         </tbody>
@@ -186,7 +186,7 @@
             </div>
 
             <div class="flex gap-2">
-                <input type="text" id="user-query" placeholder="Ej: ¿Cómo quedamos contra el Castellnovo?" 
+                <input type="text" id="user-query" placeholder="Ej: ¿Quién metió los goles contra el Castellnovo?" 
                        class="flex-grow bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
                 <button id="btn-preguntar" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl transition flex items-center gap-2">
                     <span>Consultar</span>
