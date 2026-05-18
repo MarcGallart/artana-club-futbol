@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta name="google-site-verification" content="google2607768c1efc50eb" />
-    
     <meta name="description" content="Sitio oficial del Artana C.F. Consulta los últimos resultados del equipo, estadísticas de la temporada y habla con nuestro asistente virtual con IA.">
     <meta name="keywords" content="Artana CF, Artana Club de Futbol, resultados Artana, IA Artana, futbol regional, Tercera FFCV">
     <meta name="robots" content="index, follow">
@@ -11,193 +10,225 @@
     <title>Artana C.F. - Sitio Oficial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #f3f4f6; color: #1f2937; }
+    </style>
 </head>
-<body class="bg-gray-900 text-white font-sans min-h-screen flex flex-col justify-between">
+<body class="font-sans min-h-screen flex flex-col justify-between">
 
-    <nav class="bg-gradient-to-r from-blue-900 to-red-900 p-4 shadow-xl">
+    <nav class="bg-white border-b border-gray-200 p-4 shadow-sm">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-black tracking-wider text-yellow-400">ARTANA C.F.</h1>
-            <div class="space-x-6">
-                <a href="#inicio" class="hover:text-yellow-400 transition">Inicio</a>
-                <a href="#resultados" class="hover:text-yellow-400 transition">Resultados</a>
-                <a href="#asistente-ia" class="bg-yellow-500 text-gray-900 px-4 py-2 rounded-full font-bold hover:bg-yellow-400 transition">Asistente IA</a>
+            <h1 class="text-2xl font-black tracking-wider text-yellow-600 flex items-center gap-2">
+                <i class="fas fa-shield-alt text-red-600"></i> ARTANA C.F.
+            </h1>
+            <div class="space-x-6 flex items-center">
+                <a href="#inicio" class="text-gray-600 font-semibold hover:text-red-600 transition">Inicio</a>
+                <a href="#resultados" class="text-gray-600 font-semibold hover:text-red-600 transition">Resultados</a>
+                <a href="#asistente-ia" class="bg-red-600 text-white px-5 py-2 rounded-full font-bold hover:bg-red-700 shadow-sm transition">Asistente IA</a>
             </div>
         </div>
     </nav>
 
-    <header id="inicio" class="container mx-auto text-center my-12 px-4">
-        <h2 class="text-5xl font-extrabold mb-4">Bienvenidos a la Fortaleza del Artana C.F.</h2>
-        <p class="text-gray-400 text-lg">Amateur - Tercera FFCV - Grupo 3 (Temporada 2025/2026)</p>
+    <header id="inicio" class="container mx-auto text-center my-8 px-4">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-2">Bienvenidos a la Fortaleza del Artana C.F.</h2>
+        <p class="text-gray-500 font-medium text-md">Amateur — Tercera FFCV — Grupo 3 (Estadísticas Oficiales)</p>
     </header>
 
-    <main class="container mx-auto px-4 space-y-16 flex-grow">
+    <main class="container mx-auto px-4 gap-6 grid grid-cols-1 lg:grid-cols-3 flex-grow items-start mb-12">
         
-        <section id="resultados" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <div class="lg:col-span-2 bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700/50 overflow-x-auto">
-                <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-2 flex items-center gap-2">
-                    <i class="fas fa-football-ball text-yellow-400"></i> Últimas Jornadas y Goleadores
-                </h3>
-                
-                <table class="w-full min-w-[550px] text-left border-collapse">
-                    <thead>
-                        <tr class="text-xs font-bold text-gray-400 uppercase border-b border-gray-700">
-                            <th class="py-3 px-2">Jornada</th>
-                            <th class="py-3 px-2 text-center">Encuentro</th>
-                            <th class="py-3 px-2 text-center">Resultado</th>
-                            <th class="py-3 px-2">Goleadores / Incidencias</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabla-resultados" class="divide-y divide-gray-700/50 text-sm text-gray-200">
-                        
-                        <tr class="bg-yellow-500/5 hover:bg-yellow-500/10 transition-colors">
-                            <td class="py-4 px-2 font-bold text-yellow-400">Jor. 26</td>
-                            <td class="py-4 px-2 text-center font-bold">
-                                <span class="inline-block w-28 text-right pr-2 text-white">Artana C.F.</span>
-                                <span class="text-gray-500 text-xs px-1">vs</span>
-                                <span class="inline-block w-28 text-left pl-2 text-gray-400">C.F. Castellnovo</span>
-                            </td>
-                            <td class="py-4 px-2 text-center">
-                                <span class="bg-green-500/20 text-green-400 font-black py-1 px-3 rounded-lg border border-green-500/30">5 - 0</span>
-                            </td>
-                            <td class="py-4 px-2 text-xs text-gray-300">
-                                <i class="fas fa-futbol text-yellow-400 mr-1"></i> Carda (2), Font (2), Ibáñez
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-750/30 transition-colors">
-                            <td class="py-4 px-2 text-gray-400">Jor. 25</td>
-                            <td class="py-4 px-2 text-center font-bold">
-                                <span class="inline-block w-28 text-right pr-2 text-gray-400">Mare Nostrum</span>
-                                <span class="text-gray-500 text-xs px-1">vs</span>
-                                <span class="inline-block w-28 text-left pl-2 text-white">Artana C.F.</span>
-                            </td>
-                            <td class="py-4 px-2 text-center">
-                                <span class="bg-gray-700/50 text-gray-300 font-bold py-1 px-3 rounded-lg border border-gray-600">0 - 0</span>
-                            </td>
-                            <td class="py-4 px-2 text-xs text-gray-400 italic">
-                                Sin goles. Gran trabajo defensivo.
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-750/30 transition-colors">
-                            <td class="py-4 px-2 text-gray-400">Jor. 24</td>
-                            <td class="py-4 px-2 text-center font-bold">
-                                <span class="inline-block w-28 text-right pr-2 text-white">Artana C.F.</span>
-                                <span class="text-gray-500 text-xs px-1">vs</span>
-                                <span class="inline-block w-28 text-left pl-2 text-gray-400">Almenara Atl. B</span>
-                            </td>
-                            <td class="py-4 px-2 text-center">
-                                <span class="bg-green-500/20 text-green-400 font-black py-1 px-3 rounded-lg border border-green-500/30">4 - 1</span>
-                            </td>
-                            <td class="py-4 px-2 text-xs text-gray-300">
-                                <i class="fas fa-futbol text-yellow-400 mr-1"></i> Pla, Font, Silva, Nico
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-gray-750/30 transition-colors">
-                            <td class="py-4 px-2 text-gray-400">Jor. 23</td>
-                            <td class="py-4 px-2 text-center font-bold">
-                                <span class="inline-block w-28 text-right pr-2 text-gray-400">La Vilavella C.F.</span>
-                                <span class="text-gray-500 text-xs px-1">vs</span>
-                                <span class="inline-block w-28 text-left pl-2 text-white">Artana C.F.</span>
-                            </td>
-                            <td class="py-4 px-2 text-center">
-                                <span class="bg-green-500/20 text-green-400 font-black py-1 px-3 rounded-lg border border-green-500/30">1 - 2</span>
-                            </td>
-                            <td class="py-4 px-2 text-xs text-gray-300">
-                                <i class="fas fa-futbol text-yellow-400 mr-1"></i> Carda, Font
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700/50 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-2 flex items-center gap-2">
-                        <i class="fas fa-trophy text-yellow-400"></i> Clasificación Real G3
-                    </h3>
+        <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-200 p-5 overflow-x-auto">
+            <table class="w-full min-w-[600px] text-left text-sm border-collapse">
+                <thead>
+                    <tr class="text-xs font-bold text-gray-500 uppercase bg-gray-50 border-b border-gray-200">
+                        <th class="py-3 px-4">Fecha</th>
+                        <th class="py-3 px-4">Horario</th>
+                        <th class="py-3 px-4 text-center">Partido</th>
+                        <th class="py-3 px-4">Competición</th>
+                        <th class="py-3 px-4 text-center">Estado</th>
+                        <th class="py-3 px-4 text-center">Operador</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-resultados" class="divide-y divide-gray-100 text-gray-700 font-medium">
                     
-                    <table class="w-full text-sm text-left">
-                        <thead>
-                            <tr class="text-xs font-bold text-gray-400 uppercase border-b border-gray-700">
-                                <th class="py-2 w-10 text-center">P.</th>
-                                <th class="py-2">Club</th>
-                                <th class="py-2 w-12 text-center">PTS</th>
-                                <th class="py-2 w-10 text-center">PJ</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-700/50 text-gray-300">
-                            <tr class="border-l-4 border-transparent text-gray-400">
-                                <td class="py-3 text-center">1</td>
-                                <td class="py-3 font-semibold">Biensa C.F.</td>
-                                <td class="py-3 text-center font-bold">59</td>
-                                <td class="py-3 text-center">26</td>
-                            </tr>
-                            <tr class="border-l-4 border-transparent text-gray-400">
-                                <td class="py-3 text-center">2</td>
-                                <td class="py-3 font-semibold">C.D. Jérica B</td>
-                                <td class="py-3 text-center font-bold">54</td>
-                                <td class="py-3 text-center">26</td>
-                            </tr>
-                            <tr class="bg-yellow-500/5 border-l-4 border-yellow-500">
-                                <td class="py-3 text-center font-black text-yellow-400">3</td>
-                                <td class="py-3 font-bold text-white">Artana C.F.</td>
-                                <td class="py-3 text-center font-black text-yellow-400">51</td>
-                                <td class="py-3 text-center text-gray-400">26</td>
-                            </tr>
-                            <tr class="border-l-4 border-transparent text-gray-500">
-                                <td class="py-3 text-center">4</td>
-                                <td class="py-3 font-semibold">C.F. Faura</td>
-                                <td class="py-3 text-center">45</td>
-                                <td class="py-3 text-center">26</td>
-                            </tr>
-                            <tr class="border-l-4 border-transparent text-gray-500">
-                                <td class="py-3 text-center">5</td>
-                                <td class="py-3 font-semibold">C.F. Nules B</td>
-                                <td class="py-3 text-center">40</td>
-                                <td class="py-3 text-center">26</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <a href="https://ffcv.es/" target="_blank" class="block text-center text-xs font-bold text-yellow-400 uppercase tracking-wider mt-6 hover:underline">
-                    Ver Clasificación Oficial FFCV <i class="fas fa-external-link-alt ml-1 text-[10px]"></i>
-                </a>
-            </div>
-        </section>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-4 px-4 font-bold text-gray-900">Jor. 26</td>
+                        <td class="py-4 px-4 text-gray-400">Finalizado</td>
+                        <td class="py-4 px-4 text-center">
+                            <div class="flex justify-center items-center gap-3">
+                                <span class="w-28 text-right font-bold text-gray-900">Artana C.F.</span>
+                                <span class="bg-red-600 text-white font-black text-xs px-2.5 py-1 rounded-md shadow-sm">5 - 0</span>
+                                <span class="w-28 text-left text-gray-500">Castellnovo</span>
+                            </div>
+                            <div class="text-[11px] text-gray-400 text-center mt-1 font-normal">
+                                <i class="fas fa-futbol text-gray-400"></i> Carda (2), Font (2), Ibáñez
+                            </div>
+                        </td>
+                        <td class="py-4 px-4 text-xs font-semibold text-gray-500">3ª Regional G3</td>
+                        <td class="py-4 px-4 text-center text-gray-400">—</td>
+                        <td class="py-4 px-4 text-center text-gray-400">—</td>
+                    </tr>
 
-        <section id="asistente-ia" class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-yellow-500/30 max-w-3xl mx-auto">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="bg-yellow-500 text-black p-3 rounded-full animate-pulse">
-                    <i class="fas fa-robot text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-yellow-400">Analista Virtual Artana C.F.</h3>
-                    <p class="text-xs text-gray-400">Pregúntame sobre victorias, goleadores o estadísticas de la temporada en 3ª FFCV.</p>
-                </div>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-4 px-4 font-bold text-gray-900">Jor. 25</td>
+                        <td class="py-4 px-4 text-gray-400">Finalizado</td>
+                        <td class="py-4 px-4 text-center">
+                            <div class="flex justify-center items-center gap-3">
+                                <span class="w-28 text-right text-gray-500">Mare Nostrum</span>
+                                <span class="bg-gray-200 text-gray-700 font-black text-xs px-2.5 py-1 rounded-md">0 - 0</span>
+                                <span class="w-28 text-left font-bold text-gray-900">Artana C.F.</span>
+                            </div>
+                        </td>
+                        <td class="py-4 px-4 text-xs font-semibold text-gray-500">3ª Regional G3</td>
+                        <td class="py-4 px-4 text-center text-gray-400">—</td>
+                        <td class="py-4 px-4 text-center text-gray-400">—</td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-4 px-4 font-bold text-gray-900">Jor. 24</td>
+                        <td class="py-4 px-4 text-gray-400">Finalizado</td>
+                        <td class="py-4 px-4 text-center">
+                            <div class="flex justify-center items-center gap-3">
+                                <span class="w-28 text-right font-bold text-gray-900">Artana C.F.</span>
+                                <span class="bg-red-600 text-white font-black text-xs px-2.5 py-1 rounded-md shadow-sm">4 - 1</span>
+                                <span class="w-28 text-left text-gray-500">Almenara Atl. B</span>
+                            </div>
+                            <div class="text-[11px] text-gray-400 text-center mt-1 font-normal">
+                                <i class="fas fa-futbol text-gray-400"></i> Pla, Font, Silva, Nico
+                            </div>
+                        </td>
+                        <td class="py-4 px-4 text-xs font-semibold text-gray-500">3ª Regional G3</td>
+                        <td class="py-4 px-4 text-center text-gray-400">—</td>
+                        <td class="py-4 px-4 text-center text-gray-400">—</td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="py-4 px-4 font-bold text-gray-900">Jor. 23</td>
+                        <td class="py-4 px-4 text-gray-400">Finalizado</td>
+                        <td class="py-4 px-4 text-center">
+                            <div class="flex justify-center items-center gap-3">
+                                <span class="w-28 text-right text-gray-500">La Vilavella</span>
+                                <span class="bg-red-600 text-white font-black text-xs px-2.5 py-1 rounded-md shadow-sm">1 - 2</span>
+                                <span class="w-28 text-left font-bold text-gray-900">Artana C.F.</span>
+                            </div>
+                            <div class="text-[11px] text-gray-400 text-center mt-1 font-normal">
+                                <i class="fas fa-futbol text-gray-400"></i> Carda, Font
+                            </div>
+                        </td>
+                        <td class="py-4 px-4 text-xs font-semibold text-gray-500">3ª Regional G3</td>
+                        <td class="py-4 px-4 text-center text-gray-400">—</td>
+                        <td class="py-4 px-4 text-center text-gray-400">—</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-extrabold uppercase text-gray-900 tracking-tight">Clasificación</h3>
+                <span class="text-xs font-bold text-red-600 flex items-center gap-1"><i class="fas fa-circle text-[8px]"></i> FFCV Oficial</span>
             </div>
 
-            <div id="chat-box" class="bg-gray-950 p-4 rounded-xl h-64 overflow-y-auto mb-4 font-mono text-sm space-y-2 border border-gray-700">
-                <div class="text-gray-400">[Sistema]: Inteligencia Artificial del club lista. Haz tu consulta sobre el Grupo 3.</div>
+            <div class="flex gap-2 mb-4">
+                <button class="bg-red-600 text-white text-xs font-bold px-4 py-2 rounded-lg flex-grow shadow-sm">TERCERA FFCV</button>
+                <button class="border border-gray-200 text-gray-500 text-xs font-bold px-4 py-2 rounded-lg flex-grow bg-gray-50">OTRA COMP.</button>
             </div>
+            
+            <table class="w-full text-xs text-left">
+                <thead>
+                    <tr class="text-gray-400 font-bold uppercase border-b border-gray-100 text-[10px]">
+                        <th class="py-2 w-8 text-center">P.</th>
+                        <th class="py-2">Club</th>
+                        <th class="py-2 w-10 text-center">PTS</th>
+                        <th class="py-2 w-8 text-center">PJ</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 text-gray-600 font-semibold">
+                    <tr>
+                        <td class="py-3 text-center font-bold text-gray-400">1</td>
+                        <td class="py-3">Estivella C.F.</td>
+                        <td class="py-3 text-center font-bold text-gray-900">77</td>
+                        <td class="py-3 text-center text-gray-400">26</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 text-center font-bold text-gray-400">2</td>
+                        <td class="py-3">Atl. Saguntino B</td>
+                        <td class="py-3 text-center font-bold text-gray-900">68</td>
+                        <td class="py-3 text-center text-gray-400">26</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 text-center font-bold text-gray-400">3</td>
+                        <td class="py-3">C.F. Faura</td>
+                        <td class="py-3 text-center font-bold text-gray-900">56</td>
+                        <td class="py-3 text-center text-gray-400">26</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 text-center font-bold text-gray-400">4</td>
+                        <td class="py-3">C.F. Nules B</td>
+                        <td class="py-3 text-center font-bold text-gray-900">45</td>
+                        <td class="py-3 text-center text-gray-400">26</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 text-center font-bold text-gray-400">5</td>
+                        <td class="py-3">Club At. Caudiel</td>
+                        <td class="py-3 text-center font-bold text-gray-900">44</td>
+                        <td class="py-3 text-center text-gray-400">26</td>
+                    </tr>
+                    <tr class="bg-red-50 border-l-4 border-red-600">
+                        <td class="py-3 text-center font-black text-red-600">6</td>
+                        <td class="py-3 font-bold text-gray-900">Artana C.F.</td>
+                        <td class="py-3 text-center font-black text-red-600 text-sm">41</td>
+                        <td class="py-3 text-center font-bold text-gray-900">26</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 text-center font-bold text-gray-400">7</td>
+                        <td class="py-3">La Vilavella C.F.</td>
+                        <td class="py-3 text-center font-bold text-gray-900">40</td>
+                        <td class="py-3 text-center text-gray-400">26</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 text-center font-bold text-gray-400">8</td>
+                        <td class="py-3">Mare Nostrum</td>
+                        <td class="py-3 text-center font-bold text-gray-900">38</td>
+                        <td class="py-3 text-center text-gray-400">26</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <a href="https://ffcv.es/" target="_blank" class="block text-center text-[10px] font-bold text-red-600 uppercase tracking-wider mt-4 hover:underline">
+                VER CLASIFICACIÓN COMPLETA <i class="fas fa-caret-right ml-0.5"></i>
+            </a>
+        </div>
+    </section>
 
-            <div class="flex gap-2">
-                <input type="text" id="user-query" placeholder="Ej: ¿Quién metió los goles contra el Castellnovo?" 
-                       class="flex-grow bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
-                <button id="btn-preguntar" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl transition flex items-center gap-2">
-                    <span>Consultar</span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
+    <section id="asistente-ia" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 max-w-3xl mx-auto w-full mb-12">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-red-600 text-white p-3 rounded-full shadow-sm">
+                <i class="fas fa-robot text-lg"></i>
             </div>
-        </section>
-    </main>
+            <div>
+                <h3 class="text-xl font-bold text-gray-900">Analista Virtual Artana C.F.</h3>
+                <p class="text-xs text-gray-500 font-medium">Pregúntame lo que quieras sobre el rendimiento del equipo en Tercera FFCV.</p>
+            </div>
+        </div>
 
-    <footer class="bg-gray-950 text-center py-6 mt-16 text-gray-500 text-sm border-t border-gray-800">
-        &copy; 2026 Artana C.F. - Diseñado por el mejor desarrollador web.
+        <div id="chat-box" class="bg-gray-50 p-4 rounded-xl h-64 overflow-y-auto mb-4 font-mono text-xs space-y-2 border border-gray-200 text-gray-600">
+            <div><span class="text-red-600 font-bold">[IA]:</span> Sistema listo. Introduce tu consulta sobre el Grupo 3.</div>
+        </div>
+
+        <div class="flex gap-2">
+            <input type="text" id="user-query" placeholder="Ej: ¿Quién marcó los goles contra el Castellnovo?" 
+                   class="flex-grow bg-white border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-red-600 transition">
+            <button id="btn-preguntar" class="bg-red-600 hover:bg-red-700 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-sm transition flex items-center gap-2">
+                <span>Preguntar</span>
+                <i class="fas fa-paper-plane text-xs"></i>
+            </button>
+        </div>
+    </section>
+</main>
+
+    <footer class="bg-white text-center py-6 text-gray-400 text-xs border-t border-gray-200 font-medium">
+        &copy; 2026 Artana C.F. — Sitio Web Oficial.
     </footer>
 
     <script src="app.js"></script>
