@@ -1,4 +1,4 @@
-/* CONFIGURACIÓN GENERAL */
+/* RESET GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -6,241 +6,136 @@
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-body {
-    background-color: #fcfcfc; /* Fondo blanco roto muy limpio */
-    color: #1a1a1a;
-    padding-top: 70px; /* Evita que el header tape el contenido */
-}
-
-/* BARRA DE NAVEGACIÓN SUPERIOR (ROJA Y BLANCA) */
-.main-header {
-    background-color: #cc1818; /* Rojo principal */
-    border-bottom: 4px solid #ffffff; /* Separador blanco brillante */
-    position: fixed;
-    top: 0;
-    left: 0;
+/* PORTADA A PANTALLA COMPLETA TOTALMENTE CENTRADA */
+.fullscreen-cover {
+    min-height: 100vh;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 3px 12px rgba(204, 24, 24, 0.2);
-}
-
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    align-items: center;       /* Centrado Vertical */
+    justify-content: center;     /* Centrado Horizontal */
+    background: radial-gradient(circle at center, #ffffff 0%, #f4f4f4 100%);
+    padding: 20px;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+/* TARJETA CENTRAL ENVOLVENTE */
+.cover-card {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out; /* Efecto de aparición suave */
 }
 
-.mini-logo {
-    height: 40px;
+/* DISEÑO DEL ESCUDO CENTRAL */
+.logo-wrapper {
+    margin-bottom: 25px;
+}
+
+.center-logo {
+    height: 240px; /* Tamaño imponente del escudo */
     width: auto;
     object-fit: contain;
-    background-color: #ffffff; /* Pequeño fondo blanco protector para el escudo */
-    padding: 2px;
-    border-radius: 4px;
+    /* Sombra elegante que hace resaltar el escudo sobre el fondo */
+    filter: drop-shadow(0 15px 30px rgba(204, 24, 24, 0.2));
+    transition: transform 0.3s ease;
 }
 
-.brand h1 {
-    color: #ffffff; /* Texto blanco en cabecera roja */
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+.center-logo:hover {
+    transform: scale(1.03); /* Efecto dinámico al pasar el ratón */
 }
 
-.nav-links {
+/* TEXTOS PRINCIPALES */
+.text-wrapper {
+    margin-bottom: 40px;
+}
+
+.center-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #cc1818; /* Rojo oficial */
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.center-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #5c5c5c;
+    letter-spacing: 2px;
+}
+
+/* BOTONERA EN PARALELO */
+.center-buttons {
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
-.nav-links a {
-    color: #ffcccc; /* Enlaces en rojo suave */
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 700;
-    transition: color 0.2s ease;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #ffffff; /* Blanco destacado al pasar el ratón */
-}
-
-/* SECCIÓN HERO (ESCUDO GRANDE Y TITULARES) */
-.hero-section {
-    max-width: 1200px;
-    margin: 40px auto 10px auto;
-    text-align: center;
-    padding: 20px;
-}
-
-.logo-wrapper {
-    margin-bottom: 20px;
-}
-
-.main-logo {
-    height: 160px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
-}
-
-.main-title {
-    font-size: 2.2rem;
-    font-weight: 850;
-    color: #cc1818; /* Título en rojo */
-    letter-spacing: -0.5px;
-    margin-bottom: 6px;
-}
-
-.subtitle {
+/* ESTILO BASE DE LOS BOTONES */
+.btn {
+    display: inline-block;
+    padding: 16px 36px;
     font-size: 1rem;
     font-weight: 700;
-    color: #4a4a4a;
-    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.25s ease;
 }
 
-/* DASHBOARD GRID (ESTRUCTURA EN PARALELO) */
-.dashboard-grid {
-    max-width: 1350px;
-    margin: 0 auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 25px;
-    align-items: start;
-}
-
-/* TARJETAS (CARDS CON IDENTIDAD ROJA) */
-.card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    border: 1px solid #ffeded; /* Borde sutil rojizo */
-    overflow: hidden;
-}
-
-.card-header {
-    padding: 16px 20px;
-    border-bottom: 2px solid #ffeded;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fffafa; /* Fondo de tarjeta ligeramente rosado/blanco */
-}
-
-.card-header h3 {
-    font-size: 1.05rem;
-    font-weight: 750;
-    color: #cc1818; /* Títulos de secciones en rojo */
-}
-
-/* INDICADORES DE CONEXIÓN */
-.sync-text {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #555555;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.dot-green {
-    width: 8px;
-    height: 8px;
-    background-color: #2f855a;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.sync-badge {
+/* Botón de Resultados (Rojo llamativo) */
+.btn-red {
     background-color: #cc1818;
     color: #ffffff;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border: 1px solid #cc1818;
+    box-shadow: 0 5px 15px rgba(204, 24, 24, 0.3);
 }
 
-/* TABLAS RECONVERTIDAS */
-.table-responsive {
-    overflow-x: auto;
+.btn-red:hover {
+    background-color: #b01414;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(204, 24, 24, 0.4);
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    font-size: 0.85rem;
-}
-
-th {
+/* Botón de Clasificación (Blanco con borde rojo) */
+.btn-outline {
     background-color: #ffffff;
-    color: #8c8c8c;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    padding: 14px 20px;
-    border-bottom: 1px solid #ffeded;
-    letter-spacing: 0.5px;
-}
-
-td {
-    padding: 14px 20px;
-    border-bottom: 1px solid #ffeded;
-    color: #2d2d2d;
-}
-
-/* PASTILLAS (BADGES DE ESTADO) */
-.badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-align: center;
-}
-
-.badge.finalizado {
-    background-color: #fff0f0;
     color: #cc1818;
-    border: 1px solid #ffcccc;
+    border: 2px solid #cc1818;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
 }
 
-.badge.pendiente {
-    background-color: #f7f7f7;
-    color: #666666;
-    border: 1px solid #e1e1e1;
+.btn-outline:hover {
+    background-color: #fff5f5;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(204, 24, 24, 0.1);
 }
 
-/* RESALTADO ESPECÍFICO DEL ARTANA */
-.txt-highlight {
-    color: #cc1818;
-    font-weight: 800;
-}
-
-.row-highlight {
-    background-color: #fff0f0 !important; /* Resalta tu fila con fondo rojo corporativo muy suave */
-    border-left: 4px solid #cc1818; /* Línea roja vertical para marcar tu equipo */
-}
-
-/* RESPONSIVE DESIGN (MÓVILES) */
-@media (max-width: 900px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr;
+/* ANIMACIÓN DE ENTRADA SUAVE */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    .main-title {
-        font-size: 1.6rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .header-container {
-        flex-direction: column;
-        gap: 10px;
+}
+
+/* ADAPTACIÓN AUTOMÁTICA PARA MÓVILES */
+@media (max-width: 600px) {
+    .center-title {
+        font-size: 2rem;
+    }
+    .center-logo {
+        height: 180px;
+    }
+    .center-buttons {
+        flex-direction: column; /* Botones uno encima de otro en el móvil */
+        gap: 12px;
+        padding: 0 20px;
+    }
+    .btn {
+        width: 100%;
+        padding: 14px;
     }
 }
