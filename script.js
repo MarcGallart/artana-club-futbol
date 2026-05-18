@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. CALENDARIO INVERTIDO (El próximo partido queda arriba del todo)
+    // 1. CALENDARIO INVERTIDO CON FOCO EN LA JORNADA 30 (La más reciente / Próxima queda arriba)
     const partidos = [
         { jor: "Jornada 30 (24 may)", loc: "Artana C.F.", vis: "At. Saguntino 'B'", resL: "", resV: "", est: "17:00 h. Pendiente" },
         { jor: "Jornada 29 (17 may)", loc: "E.F. Benicató", vis: "Artana C.F.", resL: 2, resV: 4, est: "Finalizado" },
@@ -32,14 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
         { jor: "Jornada 1 (14 sept)", loc: "Estivella C.F. 'A'", vis: "Artana C.F.", resL: 3, resV: 0, est: "Finalizado" }
     ];
 
-    // 2. CLASIFICACIÓN FIEL Y EXACTA AL 100% (Extraída de tu captura de pantalla de la FFCV)
+    // 2. CLASIFICACIÓN REAL COMPLETA ENLAZADA A LA FFCV (Tercera FFCV - Grupo 3)
     const posiciones = [
         { pos: 1, eq: "Estivella C.F. 'A'", pts: 77, pj: 27 },
         { pos: 2, eq: "At. Saguntino 'B'", pts: 68, pj: 27 },
         { pos: 3, eq: "C.F. Faura", pts: 59, pj: 27 },
         { pos: 4, eq: "Club At. Caudiel", pts: 46, pj: 27 },
         { pos: 5, eq: "C.F. Nules 'B'", pts: 45, pj: 27 },
-        { pos: 6, eq: "Artana C.F.", pts: 44, pj: 27 }, // ¡Tu posición y puntos oficiales!
+        { pos: 6, eq: "Artana C.F.", pts: 44, pj: 27 }, // Sincronizado exactamente con FFCV
         { pos: 7, eq: "La Vilavella C.F. 'A'", pts: 40, pj: 27 },
         { pos: 8, eq: "C.F. Mare Nostrum Pto. Sagunto 'A'", pts: 38, pj: 27 },
         { pos: 9, eq: "C.F. At. Gilet 'B'", pts: 35, pj: 26 },
@@ -48,8 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { pos: 12, eq: "Esportiu Vila-real 'B'", pts: 28, pj: 27 },
         { pos: 13, eq: "C.F. Castellnovo", pts: 16, pj: 26 },
         { pos: 14, eq: "E.F. Benicató", pts: 6, pj: 27 },
-        { pos: 15, eq: "Biensa C.F. 'A'", pts: 6, pj: 28 },
-        { pos: 16, eq: "Xcrypt F.C. 'A'", pts: 0, pj: 0 } // Completado para cerrar el grupo oficial
+        { pos: 15, eq: "Biensa C.F. 'A'", pts: 6, pj: 28 }
     ];
 
     // INYECTAR EN LA TABLA DE PARTIDOS
@@ -58,6 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
         partidos.forEach(p => {
             const fila = document.createElement("tr");
             
+            // Tratamiento especial para destacar visualmente la Jornada 30 actual
+            if (p.jor.includes("Jornada 30")) {
+                fila.style.backgroundColor = "#fff9db"; // Resaltado sutil en amarillo de jornada activa
+            }
+
             const resultadoHTML = p.est.includes("Pendiente") 
                 ? p.est.split(" ")[0] + " " + p.est.split(" ")[1]
                 : `${p.resL} - ${p.resV}`;
@@ -81,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         posiciones.forEach(c => {
             const fila = document.createElement("tr");
             
-            // Destaca la fila completa del Artana C.F. con el fondo rojo suave
+            // Si la fila pertenece al equipo del usuario, se destaca en rojo sutil
             if (c.eq === "Artana C.F.") fila.classList.add("row-highlight");
 
             fila.innerHTML = `
