@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta name="google-site-verification" content="google2607768c1efc50eb" />
-    <meta name="description" content="Sitio oficial del Artana C.F. Consulta los últimos resultados del equipo, estadísticas de la temporada y habla con nuestro asistente virtual con IA.">
-    <meta name="keywords" content="Artana CF, Artana Club de Futbol, resultados Artana, IA Artana, futbol regional, Tercera FFCV">
+    <meta name="description" content="Sitio oficial del Artana C.F. Consulta los últimos resultados del equipo, la clasificación real de la FFCV y habla con nuestro asistente con IA.">
+    <meta name="keywords" content="Artana CF, Artana Club de Futbol, resultados Artana, Tercera FFCV Grupo 3, futbol regional">
     <meta name="robots" content="index, follow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-[#fcfcfc] text-gray-800 font-sans min-h-screen flex flex-col justify-between antialiased">
+<body class="bg-[#f6f8fa] text-gray-800 font-sans min-h-screen flex flex-col justify-between antialiased">
 
     <nav class="bg-white border-b border-gray-200 py-3.5 px-6 shadow-sm sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
@@ -20,21 +20,21 @@
             </h1>
             <div class="space-x-8 flex items-center">
                 <a href="#inicio" class="text-gray-600 text-xs font-bold uppercase tracking-wider hover:text-red-600 transition">Inicio</a>
-                <a href="#resultados" class="text-gray-600 text-xs font-bold uppercase tracking-wider hover:text-red-600 transition">Resultados</a>
+                <a href="#resultados" class="text-gray-600 text-xs font-bold uppercase tracking-wider hover:text-red-600 transition">Resultados y Tabla</a>
                 <a href="#asistente-ia" class="bg-[#ff4b4b] text-white text-[11px] uppercase tracking-widest px-5 py-2.5 rounded font-bold hover:bg-red-600 shadow-sm transition">Asistente IA</a>
             </div>
         </div>
     </nav>
 
     <header id="inicio" class="container mx-auto text-center my-8 px-4">
-        <h2 class="text-3xl font-black text-gray-900 tracking-tight uppercase mb-1">Bienvenidos a la Fortaleza del Artana C.F.</h2>
-        <p class="text-gray-500 font-semibold text-xs tracking-wider uppercase">Amateur — Tercera FFCV — Grupo 3 (Temporada 2025/2026)</p>
+        <h2 class="text-3xl font-black text-slate-950 tracking-tight uppercase mb-1">Bienvenidos a la Fortaleza del Artana C.F.</h2>
+        <p class="text-gray-500 font-bold text-xs tracking-wider uppercase">Amateur — Tercera FFCV — Grupo 3 (Temporada 2025/2026)</p>
     </header>
 
-    <main class="container mx-auto px-4 gap-6 grid grid-cols-1 lg:grid-cols-3 flex-grow items-start mb-12" id="resultados">
+    <main id="resultados" class="container mx-auto px-4 gap-6 grid grid-cols-1 lg:grid-cols-3 flex-grow items-start mb-12">
         
-        <div class="lg:col-span-2 bg-white rounded shadow-sm border border-gray-200 p-1 overflow-x-auto">
-            <table class="w-full min-w-[780px] text-left text-xs border-collapse">
+        <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-200 p-1 overflow-x-auto">
+            <table class="w-full min-w-[760px] text-left text-xs border-collapse">
                 <thead>
                     <tr class="font-bold text-gray-400 uppercase bg-[#fafafa] border-b border-gray-200 text-[10px] tracking-wider">
                         <th class="py-3.5 px-4 text-center w-24">Fecha</th>
@@ -45,235 +45,299 @@
                         <th class="py-3.5 px-4 text-center w-20">Operador</th>
                     </tr>
                 </thead>
-                <tbody id="tabla-resultados" class="divide-y divide-gray-100 text-gray-800 font-bold">
+                <tbody class="divide-y divide-gray-100 text-slate-900 font-bold text-xs">
                     
                     <tr class="hover:bg-gray-50/60 transition-colors bg-white">
-                        <td class="py-4 px-4 text-center text-[10px] text-gray-400 font-bold leading-tight uppercase">DOM<br><span class="font-extrabold text-gray-900 text-xs">17.05.2026</span></td>
-                        <td class="py-4 px-2 text-center text-gray-900 text-xs font-black">20:00</td>
+                        <td class="py-4 px-4 text-center text-[10px] text-gray-400 leading-tight uppercase">DOM<br><span class="font-extrabold text-slate-950 text-xs">17.05.2026</span></td>
+                        <td class="py-4 px-2 text-center font-black">20:00</td>
                         <td class="py-4 px-4">
-                            <div class="flex justify-center items-center gap-4">
-                                <span class="w-36 text-right uppercase tracking-wide text-gray-400 font-medium truncate">E.F. Benicató</span>
-                                <span class="bg-[#ff4b4b] text-white font-black text-xs px-2.5 py-1 rounded-sm shadow-sm tracking-widest min-w-[48px] text-center">2 - 4</span>
-                                <span class="w-36 text-left uppercase tracking-wide text-gray-950 truncate">Artana C.F.</span>
+                            <div class="flex justify-center items-center gap-3">
+                                <div class="flex items-center justify-end gap-2 w-40">
+                                    <span class="uppercase tracking-wide text-gray-400 font-medium truncate">E.F. Benicató</span>
+                                    <img src="assets/escudos/benicato.png" alt="E.F. Benicató" class="w-5 h-5 object-contain" onerror="this.src='https://placehold.co/20?text=EB'">
+                                </div>
+                                <span class="bg-[#ff4b4b] text-white font-black text-xs px-2.5 py-1 rounded-sm shadow-sm tracking-widest text-center min-w-[46px]">2 - 4</span>
+                                <div class="flex items-center justify-start gap-2 w-40">
+                                    <img src="assets/escudos/artana.png" alt="Artana C.F." class="w-5 h-5 object-contain" onerror="this.src='https://placehold.co/20?text=AC'">
+                                    <span class="uppercase tracking-wide text-slate-950 truncate">Artana C.F.</span>
+                                </div>
                             </div>
-                            <div class="text-[10px] text-gray-400 font-normal text-center mt-2 flex justify-center items-center gap-1.5">
-                                <i class="fas fa-futbol text-gray-300"></i> Goles: Khalid (2), Isma, Solaz <span class="text-gray-300">|</span> <i class="fas fa-map-marker-alt text-gray-300"></i> Noulas (Nules)
+                            <div class="text-[10px] text-gray-400 font-normal text-center mt-2 flex justify-center items-center gap-1">
+                                <i class="fas fa-futbol text-gray-300"></i> Goles: Khalid (2), Isma, Solaz <span class="text-gray-300 mx-1">|</span> <i class="fas fa-map-marker-alt text-gray-300"></i> Noulas (Nules)
                             </div>
                         </td>
                         <td class="py-4 px-4 text-gray-500 font-semibold tracking-wide text-[11px] uppercase">Tercera FFCV G3</td>
-                        <td class="py-4 px-4 text-center text-emerald-600 font-black text-[10px] uppercase tracking-wider"><i class="fas fa-check-circle text-[9px]"></i> Fin</td>
+                        <td class="py-4 px-4 text-center text-emerald-600 font-black text-[10px] uppercase"><span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Fin</span></td>
                         <td class="py-4 px-4 text-center text-gray-300 font-normal">—</td>
                     </tr>
 
-                    <tr class="hover:bg-gray-50/60 transition-colors bg-[#fbfbfb]">
-                        <td class="py-4 px-4 text-center text-[10px] text-gray-400 font-bold leading-tight uppercase">DOM<br><span class="font-extrabold text-gray-900 text-xs">10.05.2026</span></td>
-                        <td class="py-4 px-2 text-center text-gray-900 text-xs font-black">18:00</td>
+                    <tr class="hover:bg-gray-50/60 transition-colors bg-[#fcfcfc]">
+                        <td class="py-4 px-4 text-center text-[10px] text-gray-400 leading-tight uppercase">DOM<br><span class="font-extrabold text-slate-950 text-xs">10.05.2026</span></td>
+                        <td class="py-4 px-2 text-center font-black">18:00</td>
                         <td class="py-4 px-4">
-                            <div class="flex justify-center items-center gap-4">
-                                <span class="w-36 text-right uppercase tracking-wide text-gray-950 truncate">Artana C.F.</span>
-                                <span class="bg-[#ff4b4b] text-white font-black text-xs px-2.5 py-1 rounded-sm shadow-sm tracking-widest min-w-[48px] text-center">5 - 0</span>
-                                <span class="w-36 text-left uppercase tracking-wide text-gray-400 font-medium truncate">Castellnovo C.F.</span>
+                            <div class="flex justify-center items-center gap-3">
+                                <div class="flex items-center justify-end gap-2 w-40">
+                                    <span class="uppercase tracking-wide text-slate-950 truncate">Artana C.F.</span>
+                                    <img src="assets/escudos/artana.png" alt="Artana C.F." class="w-5 h-5 object-contain" onerror="this.src='https://placehold.co/20?text=AC'">
+                                </div>
+                                <span class="bg-[#ff4b4b] text-white font-black text-xs px-2.5 py-1 rounded-sm shadow-sm tracking-widest text-center min-w-[46px]">5 - 0</span>
+                                <div class="flex items-center justify-start gap-2 w-40">
+                                    <img src="assets/escudos/castellnovo.png" alt="C.F. Castellnovo" class="w-5 h-5 object-contain" onerror="this.src='https://placehold.co/20?text=CC'">
+                                    <span class="uppercase tracking-wide text-gray-400 font-medium truncate">C.F. Castellnovo</span>
+                                </div>
                             </div>
-                            <div class="text-[10px] text-gray-400 font-normal text-center mt-2 flex justify-center items-center gap-1.5">
+                            <div class="text-[10px] text-gray-400 font-normal text-center mt-2 flex justify-center items-center gap-1">
                                 <i class="fas fa-futbol text-gray-300"></i> Goles: Carda (2), Font (2), Ibáñez
                             </div>
                         </td>
                         <td class="py-4 px-4 text-gray-500 font-semibold tracking-wide text-[11px] uppercase">Tercera FFCV G3</td>
-                        <td class="py-4 px-4 text-center text-emerald-600 font-black text-[10px] uppercase tracking-wider"><i class="fas fa-check-circle text-[9px]"></i> Fin</td>
+                        <td class="py-4 px-4 text-center text-emerald-600 font-black text-[10px] uppercase"><span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Fin</span></td>
                         <td class="py-4 px-4 text-center text-gray-300 font-normal">—</td>
                     </tr>
 
                     <tr class="hover:bg-gray-50/60 transition-colors bg-white">
-                        <td class="py-4 px-4 text-center text-[10px] text-gray-400 font-bold leading-tight uppercase">SÁB<br><span class="font-extrabold text-gray-900 text-xs">02.05.2026</span></td>
-                        <td class="py-4 px-2 text-center text-gray-900 text-xs font-black">17:30</td>
+                        <td class="py-4 px-4 text-center text-[10px] text-gray-400 leading-tight uppercase">SÁB<br><span class="font-extrabold text-slate-950 text-xs">02.05.2026</span></td>
+                        <td class="py-4 px-2 text-center font-black">17:30</td>
                         <td class="py-4 px-4">
-                            <div class="flex justify-center items-center gap-4">
-                                <span class="w-36 text-right uppercase tracking-wide text-gray-950 truncate">Artana C.F.</span>
-                                <span class="bg-[#ff4b4b] text-white font-black text-xs px-2.5 py-1 rounded-sm shadow-sm tracking-widest min-w-[48px] text-center">1 - 0</span>
-                                <span class="w-36 text-left uppercase tracking-wide text-gray-400 font-medium truncate">La Vilavella C.F.</span>
+                            <div class="flex justify-center items-center gap-3">
+                                <div class="flex items-center justify-end gap-2 w-40">
+                                    <span class="uppercase tracking-wide text-slate-950 truncate">Artana C.F.</span>
+                                    <img src="assets/escudos/artana.png" alt="Artana C.F." class="w-5 h-5 object-contain" onerror="this.src='https://placehold.co/20?text=AC'">
+                                </div>
+                                <span class="bg-[#ff4b4b] text-white font-black text-xs px-2.5 py-1 rounded-sm shadow-sm tracking-widest text-center min-w-[46px]">1 - 0</span>
+                                <div class="flex items-center justify-start gap-2 w-40">
+                                    <img src="assets/escudos/vilavella.png" alt="La Vilavella C.F." class="w-5 h-5 object-contain" onerror="this.src='https://placehold.co/20?text=LV'">
+                                    <span class="uppercase tracking-wide text-gray-400 font-medium truncate">La Vilavella C.F.</span>
+                                </div>
                             </div>
                         </td>
                         <td class="py-4 px-4 text-gray-500 font-semibold tracking-wide text-[11px] uppercase">Tercera FFCV G3</td>
-                        <td class="py-4 px-4 text-center text-emerald-600 font-black text-[10px] uppercase tracking-wider"><i class="fas fa-check-circle text-[9px]"></i> Fin</td>
+                        <td class="py-4 px-4 text-center text-emerald-600 font-black text-[10px] uppercase"><span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Fin</span></td>
                         <td class="py-4 px-4 text-center text-gray-300 font-normal">—</td>
                     </tr>
 
-                    <tr class="hover:bg-gray-50/60 transition-colors bg-[#fbfbfb]">
-                        <td class="py-4 px-4 text-center text-[10px] text-gray-400 font-bold leading-tight uppercase">DOM<br><span class="font-extrabold text-gray-900 text-xs">26.04.2026</span></td>
-                        <td class="py-4 px-2 text-center text-gray-900 text-xs font-black">17:00</td>
+                    <tr class="hover:bg-gray-50/60 transition-colors bg-[#fcfcfc]">
+                        <td class="py-4 px-4 text-center text-[10px] text-gray-400 leading-tight uppercase">DOM<br><span class="font-extrabold text-slate-950 text-xs">26.04.2026</span></td>
+                        <td class="py-4 px-2 text-center font-black">17:00</td>
                         <td class="py-4 px-4">
-                            <div class="flex justify-center items-center gap-4">
-                                <span class="w-36 text-right uppercase tracking-wide text-gray-400 font-medium truncate">Estivella C.F.</span>
-                                <span class="bg-[#ff4b4b] text-white font-black text-xs px-2.5 py-1 rounded-sm shadow-sm tracking-widest min-w-[48px] text-center">2 - 0</span>
-                                <span class="w-36 text-left uppercase tracking-wide text-gray-950 truncate">Artana C.F.</span>
+                            <div class="flex justify-center items-center gap-3">
+                                <div class="flex items-center justify-end gap-2 w-40">
+                                    <span class="uppercase tracking-wide text-gray-400 font-medium truncate">Estivella C.F.</span>
+                                    <img src="assets/escudos/estivella.png" alt="Estivella C.F." class="w-5 h-5 object-contain" onerror="this.src='https://placehold.co/20?text=EC'">
+                                </div>
+                                <span class="bg-[#ff4b4b] text-white font-black text-xs px-2.5 py-1 rounded-sm shadow-sm tracking-widest text-center min-w-[46px]">2 - 0</span>
+                                <div class="flex items-center justify-start gap-2 w-40">
+                                    <img src="assets/escudos/artana.png" alt="Artana C.F." class="w-5 h-5 object-contain" onerror="this.src='https://placehold.co/20?text=AC'">
+                                    <span class="uppercase tracking-wide text-slate-950 truncate">Artana C.F.</span>
+                                </div>
                             </div>
                         </td>
                         <td class="py-4 px-4 text-gray-500 font-semibold tracking-wide text-[11px] uppercase">Tercera FFCV G3</td>
-                        <td class="py-4 px-4 text-center text-emerald-600 font-black text-[10px] uppercase tracking-wider"><i class="fas fa-check-circle text-[9px]"></i> Fin</td>
+                        <td class="py-4 px-4 text-center text-emerald-600 font-black text-[10px] uppercase"><span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Fin</span></td>
                         <td class="py-4 px-4 text-center text-gray-300 font-normal">—</td>
                     </tr>
-
                 </tbody>
             </table>
         </div>
 
-        <div class="bg-white rounded shadow-sm border border-gray-200 p-5">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-base font-black uppercase text-gray-900 tracking-tight">Clasificación</h3>
-                <span class="text-[10px] font-bold text-red-600 flex items-center gap-1 uppercase tracking-wider">
-                    <i class="fas fa-circle text-[6px]"></i> FFCV Oficial
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+            <div class="flex justify-between items-center mb-3">
+                <h3 class="text-sm font-black uppercase text-slate-900 tracking-tight flex items-center gap-1.5">
+                    <i class="fas fa-trophy text-amber-500"></i> Clasificación G3
+                </h3>
+                <span class="text-[9px] font-black text-red-600 bg-red-50 px-2 py-0.5 rounded border border-red-200 uppercase tracking-wider">
+                    <i class="fas fa-circle text-[5px] mr-1 animate-pulse"></i> FFCV Oficial
                 </span>
             </div>
 
-            <div class="flex gap-2 mb-4">
-                <button class="bg-[#ff4b4b] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2.5 rounded shadow-sm flex-grow">TERCERA FFCV</button>
-                <button class="border border-gray-200 text-gray-400 text-[10px] font-bold uppercase tracking-widest px-4 py-2.5 rounded bg-[#fcfcfc] flex-grow">OTRA COMP.</button>
+            <div class="flex gap-1.5 mb-4">
+                <button class="bg-[#ff4b4b] text-white text-[9px] font-black uppercase tracking-widest px-3 py-2 rounded shadow-sm flex-grow">TERCERA FFCV</button>
+                <button class="border border-gray-200 text-gray-400 text-[9px] font-black uppercase tracking-widest px-3 py-2 rounded bg-[#fafafa] flex-grow">OTRA COMP.</button>
             </div>
             
-            <table class="w-full text-xs text-left">
+            <table class="w-full text-xs text-left border-collapse">
                 <thead>
-                    <tr class="text-gray-400 font-bold uppercase border-b border-gray-200 text-[10px] tracking-wider">
-                        <th class="py-2 w-8 text-center">P.</th>
-                        <th class="py-2">Club</th>
-                        <th class="py-2 w-12 text-center">PTS</th>
-                        <th class="py-2 w-10 text-center">PJ</th>
+                    <tr class="text-gray-400 font-bold uppercase border-b border-gray-200 text-[9px] tracking-wider">
+                        <th class="py-1.5 w-7 text-center">POS</th>
+                        <th class="py-1.5 pl-1">EQUIPO</th>
+                        <th class="py-1.5 w-10 text-center font-black text-slate-950">PTS</th>
+                        <th class="py-1.5 w-8 text-center">PJ</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-100 text-gray-600 font-bold text-[11px]">
+                <tbody class="divide-y divide-gray-100 font-bold text-[11px] text-gray-600">
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">1</td>
-                        <td class="py-2.5 text-gray-900 font-medium">Estivella C.F.</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">77</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-extrabold text-blue-600">1</td>
+                        <td class="py-2 pl-1 text-slate-950 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/estivella.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=E'">
+                            <span>Estivella C.F. 'A'</span>
+                        </td>
+                        <td class="py-2 text-center font-black text-slate-950 text-xs">77</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">2</td>
-                        <td class="py-2.5 text-gray-900 font-medium">Atl. Saguntino B</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">68</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-extrabold text-gray-500">2</td>
+                        <td class="py-2 pl-1 text-slate-950 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/saguntino.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=S'">
+                            <span>At. Saguntino 'B'</span>
+                        </td>
+                        <td class="py-2 text-center font-black text-slate-950 text-xs">68</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">3</td>
-                        <td class="py-2.5 text-gray-900 font-medium">Biensa C.F.</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">59</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-extrabold text-gray-500">3</td>
+                        <td class="py-2 pl-1 text-slate-950 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/faura.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=F'">
+                            <span>C.F. Faura</span>
+                        </td>
+                        <td class="py-2 text-center font-black text-slate-950 text-xs">59</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">4</td>
-                        <td class="py-2.5 text-gray-900 font-medium">C.F. Faura</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">56</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-extrabold text-gray-500">4</td>
+                        <td class="py-2 pl-1 text-slate-950 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/caudiel.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=C'">
+                            <span>Club At. Caudiel</span>
+                        </td>
+                        <td class="py-2 text-center font-black text-slate-950 text-xs">46</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">5</td>
-                        <td class="py-2.5 text-gray-900 font-medium">C.D. Jérica B</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">54</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-extrabold text-gray-500">5</td>
+                        <td class="py-2 pl-1 text-slate-950 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/nules.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=N'">
+                            <span>C.F. Nules 'B'</span>
+                        </td>
+                        <td class="py-2 text-center font-black text-slate-950 text-xs">45</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     
-                    <tr class="bg-red-50 border-l-4 border-[#ff4b4b]">
-                        <td class="py-2.5 text-center font-black text-red-600">6</td>
-                        <td class="py-2.5 font-extrabold text-gray-900">Artana C.F.</td>
-                        <td class="py-2.5 text-center font-black text-red-600 text-xs">44</td>
-                        <td class="py-2.5 text-center font-extrabold text-gray-900">27</td>
+                    <tr class="bg-red-50/80 border-l-4 border-[#ff4b4b]">
+                        <td class="py-2 text-center font-black text-red-600 text-xs">6</td>
+                        <td class="py-2 pl-1 font-black text-slate-950 truncate flex items-center gap-2">
+                            <img src="assets/escudos/artana.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=A'">
+                            <span>Artana C.F.</span>
+                        </td>
+                        <td class="py-2 text-center font-black text-red-600 text-sm">44</td>
+                        <td class="py-2 text-center font-black text-slate-950">27</td>
                     </tr>
                     
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">7</td>
-                        <td class="py-2.5 text-gray-900 font-medium">C.A. Caudiel</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">43</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-bold text-gray-400">7</td>
+                        <td class="py-2 pl-1 text-slate-700 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/vilavella.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=V'">
+                            <span>La Vilavella C.F. 'A'</span>
+                        </td>
+                        <td class="py-2 text-center font-bold text-slate-950">40</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">8</td>
-                        <td class="py-2.5 text-gray-900 font-medium">C.F. Nules B</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">42</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-bold text-gray-400">8</td>
+                        <td class="py-2 pl-1 text-slate-700 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/marenostrum.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=M'">
+                            <span>C.F. Mare Nostrum Pto.</span>
+                        </td>
+                        <td class="py-2 text-center font-bold text-slate-950">38</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">9</td>
-                        <td class="py-2.5 text-gray-900 font-medium">La Vilavella C.F.</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">40</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-bold text-gray-400">9</td>
+                        <td class="py-2 pl-1 text-slate-700 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/gilet.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=G'">
+                            <span>C.F. At. Gilet 'B'</span>
+                        </td>
+                        <td class="py-2 text-center font-bold text-slate-950">35</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">26</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">10</td>
-                        <td class="py-2.5 text-gray-900 font-medium">Mare Nostrum Puerto</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">38</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-bold text-gray-400">10</td>
+                        <td class="py-2 pl-1 text-slate-700 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/jerica.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=J'">
+                            <span>C.D. Jérica 'B'</span>
+                        </td>
+                        <td class="py-2 text-center font-bold text-slate-950">32</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">11</td>
-                        <td class="py-2.5 text-gray-900 font-medium">Almenara Atlètic B</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">32</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-bold text-gray-400">11</td>
+                        <td class="py-2 pl-1 text-slate-700 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/almenara.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=A'">
+                            <span>Club Almenara Atlètic 'B'</span>
+                        </td>
+                        <td class="py-2 text-center font-bold text-slate-950">28</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">12</td>
-                        <td class="py-2.5 text-gray-900 font-medium">Castellnovo C.F.</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">28</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-bold text-gray-400">12</td>
+                        <td class="py-2 pl-1 text-slate-700 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/vilareal.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=V'">
+                            <span>Esportiu Vila-real 'B'</span>
+                        </td>
+                        <td class="py-2 text-center font-bold text-slate-950">28</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">13</td>
-                        <td class="py-2.5 text-gray-900 font-medium">Xilxes C.F.</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">25</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-bold text-gray-400">13</td>
+                        <td class="py-2 pl-1 text-slate-700 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/castellnovo.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=C'">
+                            <span>C.F. Castellnovo</span>
+                        </td>
+                        <td class="py-2 text-center font-bold text-slate-950">16</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">26</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">14</td>
-                        <td class="py-2.5 text-gray-900 font-medium">C.F. Altura</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">21</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-bold text-gray-400">14</td>
+                        <td class="py-2 pl-1 text-slate-700 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/benicato.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=B'">
+                            <span>E.F. Benicató</span>
+                        </td>
+                        <td class="py-2 text-center font-bold text-slate-950">6</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">27</td>
                     </tr>
                     <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">15</td>
-                        <td class="py-2.5 text-gray-900 font-medium">C.D. Sot de Ferrer</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">17</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
-                    </tr>
-                    <tr>
-                        <td class="py-2.5 text-center font-bold text-gray-400">16</td>
-                        <td class="py-2.5 text-gray-900 font-medium">Moncofa F.C. B</td>
-                        <td class="py-2.5 text-center font-black text-gray-900">12</td>
-                        <td class="py-2.5 text-center text-gray-400 font-normal">27</td>
+                        <td class="py-2 text-center font-bold text-gray-400">15</td>
+                        <td class="py-2 pl-1 text-slate-700 truncate font-medium flex items-center gap-2">
+                            <img src="assets/escudos/biensa.png" alt="" class="w-4 h-4 object-contain" onerror="this.src='https://placehold.co/16?text=B'">
+                            <span>Biensa C.F. 'A'</span>
+                        </td>
+                        <td class="py-2 text-center font-bold text-slate-950">6</td>
+                        <td class="py-2 text-center text-gray-400 font-normal">28</td>
                     </tr>
                 </tbody>
             </table>
             
-            <a href="https://ffcv.es/" target="_blank" class="block text-center text-[10px] font-bold text-red-600 uppercase tracking-widest mt-4 hover:underline">
+            <a href="https://ffcv.es/" target="_blank" class="block text-center text-[10px] font-black text-red-600 uppercase tracking-widest mt-4 hover:underline">
                 VER CLASIFICACIÓN COMPLETA <i class="fas fa-caret-right ml-0.5"></i>
             </a>
         </div>
     </main>
 
-    <section id="asistente-ia" class="bg-white p-6 rounded shadow-sm border border-gray-200 max-w-4xl mx-auto w-full mb-12">
+    <section id="asistente-ia" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 max-w-4xl mx-auto w-full mb-12">
         <div class="flex items-center gap-3 mb-4">
             <div class="bg-[#ff4b4b] text-white p-3 rounded shadow-sm">
                 <i class="fas fa-robot text-lg"></i>
             </div>
             <div>
-                <h3 class="text-base font-black text-gray-900 uppercase tracking-tight">Analista Virtual Artana C.F.</h3>
-                <p class="text-xs text-gray-500 font-medium">Pregúntame sobre el 2-4 al Benicató en Nules o estadísticas de la temporada.</p>
+                <h3 class="text-base font-black text-slate-950 uppercase tracking-tight">Analista Virtual Artana C.F.</h3>
+                <p class="text-xs text-gray-500 font-medium">Pregúntame sobre el 2-4 al Benicató en Nules o vuestros 44 puntos en la liga.</p>
             </div>
         </div>
 
-        <div id="chat-box" class="bg-[#fafafa] p-4 rounded border border-gray-200 h-40 overflow-y-auto mb-4 font-mono text-xs space-y-2 text-gray-600">
-            <div><span class="text-red-600 font-bold">[IA]:</span> Base de datos sincronizada: 44 puntos en la tabla. Partidazo en el Noulas el domingo 17. ¿En qué puedo ayudarte?</div>
+        <div id="chat-box" class="bg-[#fafafa] p-4 rounded border border-gray-200 h-36 overflow-y-auto mb-4 font-mono text-xs space-y-2 text-gray-600">
+            <div><span class="text-red-600 font-bold">[IA]:</span> Datos de la FFCV del Grupo 3 sincronizados en vivo. El Artana marcha 6º con 44 puntos reales. Hazme una pregunta sobre la plantilla o los partidos.</div>
         </div>
 
         <div class="flex gap-2">
-            <input type="text" id="user-query" placeholder="Ej: ¿Quiénes marcaron el domingo?" 
-                   class="flex-grow bg-white border border-gray-300 rounded px-4 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-red-500 font-semibold">
-            <button id="btn-preguntar" class="bg-slate-900 hover:bg-gray-900 text-white font-bold text-[11px] uppercase tracking-wider px-6 py-2.5 rounded shadow-sm transition flex items-center gap-2">
+            <input type="text" id="user-query" placeholder="Ej: ¿Cuántos puntos le sacamos a La Vilavella?" 
+                   class="flex-grow bg-white border border-gray-300 rounded px-4 py-2.5 text-xs text-slate-950 focus:outline-none focus:border-red-500 font-semibold">
+            <button id="btn-preguntar" class="bg-slate-950 hover:bg-slate-900 text-white font-bold text-[11px] uppercase tracking-wider px-6 py-2.5 rounded shadow-sm transition flex items-center gap-2">
                 <span>Enviar</span>
                 <i class="fas fa-paper-plane text-[9px]"></i>
             </button>
         </div>
     </section>
 
-    <footer class="bg-white text-center py-5 text-gray-400 text-[10px] border-t border-gray-200 font-bold tracking-wider uppercase">
-        &copy; 2026 Artana C.F. — Sitio Web Oficial Corporativo.
+    <footer class="bg-white text-center py-5 text-gray-400 text-[10px] border-t border-gray-200 font-black tracking-widest uppercase">
+        &copy; 2026 Artana C.F. — Portal Web Oficial de Tercera FFCV.
     </footer>
 
     <script src="app.js"></script>
