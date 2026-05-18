@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. CALENDARIO INVERTIDO CON FOCO EN LA JORNADA 30 (La más reciente / Próxima queda arriba)
+    // 1. CALENDARIO INVERTIDO (El próximo partido/más reciente queda arriba del todo)
     const partidos = [
         { jor: "Jornada 30 (24 may)", loc: "Artana C.F.", vis: "At. Saguntino 'B'", resL: "", resV: "", est: "17:00 h. Pendiente" },
         { jor: "Jornada 29 (17 may)", loc: "E.F. Benicató", vis: "Artana C.F.", resL: 2, resV: 4, est: "Finalizado" },
@@ -32,19 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
         { jor: "Jornada 1 (14 sept)", loc: "Estivella C.F. 'A'", vis: "Artana C.F.", resL: 3, resV: 0, est: "Finalizado" }
     ];
 
-    // 2. CLASIFICACIÓN REAL COMPLETA ENLAZADA A LA FFCV (Tercera FFCV - Grupo 3)
+    // 2. CLASIFICACIÓN REAL OFICIAL DE LA FFCV (Grupo 3 - Copiado exacto de tu captura)
     const posiciones = [
         { pos: 1, eq: "Estivella C.F. 'A'", pts: 77, pj: 27 },
         { pos: 2, eq: "At. Saguntino 'B'", pts: 68, pj: 27 },
         { pos: 3, eq: "C.F. Faura", pts: 59, pj: 27 },
         { pos: 4, eq: "Club At. Caudiel", pts: 46, pj: 27 },
         { pos: 5, eq: "C.F. Nules 'B'", pts: 45, pj: 27 },
-        { pos: 6, eq: "Artana C.F.", pts: 44, pj: 27 }, // Sincronizado exactamente con FFCV
+        { pos: 6, eq: "Artana C.F.", pts: 44, pj: 27 },
         { pos: 7, eq: "La Vilavella C.F. 'A'", pts: 40, pj: 27 },
         { pos: 8, eq: "C.F. Mare Nostrum Pto. Sagunto 'A'", pts: 38, pj: 27 },
         { pos: 9, eq: "C.F. At. Gilet 'B'", pts: 35, pj: 26 },
         { pos: 10, eq: "C.D. Jérica 'B'", pts: 32, pj: 27 },
-        { pos: 11, eq: "Club Almenara Atlètic 'B'", pts: 28, pj: 27 },
+        { pos: 11, border: "Club Almenara Atlètic 'B'", eq: "Club Almenara Atlètic 'B'", pts: 28, pj: 27 },
         { pos: 12, eq: "Esportiu Vila-real 'B'", pts: 28, pj: 27 },
         { pos: 13, eq: "C.F. Castellnovo", pts: 16, pj: 26 },
         { pos: 14, eq: "E.F. Benicató", pts: 6, pj: 27 },
@@ -57,12 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
         partidos.forEach(p => {
             const fila = document.createElement("tr");
             
-            // Tratamiento especial para destacar visualmente la Jornada 30 actual
+            // Si es la Jornada 30 activa, le añade un sombreado amarillo de atención
             if (p.jor.includes("Jornada 30")) {
-                fila.style.backgroundColor = "#fff9db"; // Resaltado sutil en amarillo de jornada activa
+                fila.style.backgroundColor = "#fffbeb";
             }
 
-            const resultadoHTML = p.est.includes("Pendiente") 
+            const esPendiente = p.est.includes("Pendiente");
+            const resultadoHTML = esPendiente 
                 ? p.est.split(" ")[0] + " " + p.est.split(" ")[1]
                 : `${p.resL} - ${p.resV}`;
 
@@ -73,20 +74,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span class="${p.vis === 'Artana C.F.' ? 'txt-highlight' : ''}">${p.vis}</span>
                 </td>
                 <td><strong>${resultadoHTML}</strong></td>
-                <td><span class="badge ${p.est.includes('Pendiente') ? 'pendiente' : 'finalizado'}">${p.est.includes('Pendiente') ? 'Pendiente' : 'Finalizado'}</span></td>
+                <td><span class="badge ${esPendiente ? 'pendiente' : 'finalizado'}">${esPendiente ? 'Pendiente' : 'Finalizado'}</span></td>
             `;
             tablaPartidos.appendChild(fila);
         });
     }
 
-    // INYECTAR EN LA TABLA DE CLASIFICACIÓN FFCV
+    // INYECTAR EN LA TABLA DE CLASIFICACIÓN
     const tablaClas = document.getElementById("tabla-clasificacion");
     if (tablaClas) {
         posiciones.forEach(c => {
             const fila = document.createElement("tr");
             
-            // Si la fila pertenece al equipo del usuario, se destaca en rojo sutil
-            if (c.eq === "Artana C.F.") fila.classList.add("row-highlight");
+            // Destaca de forma automática toda la fila del Artana C.F.
+            if (c.eq === "Artana C.F.") {
+                fila.classList.add("row-highlight");
+            }
 
             fila.innerHTML = `
                 <td><strong>${c.pos}</strong></td>
