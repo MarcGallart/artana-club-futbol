@@ -10,39 +10,50 @@
     <title>Artana C.F. - Sitio Oficial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos para garantizar que el escudo del Artana mantenga sus proporciones perfectas */
+        .escudo-oficial {
+            object-fit: contain;
+            filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+        }
+    </style>
 </head>
-<body class="bg-[#f6f8fa] text-gray-800 font-sans min-h-screen flex flex-col justify-between antialiased">
+<body class="bg-[#f4f6f9] text-gray-800 font-sans min-h-screen flex flex-col justify-between antialiased">
 
-    <nav class="bg-white border-b border-gray-200 py-3.5 px-6 shadow-sm sticky top-0 z-50">
+    <nav class="bg-[#1a202c] border-b-4 border-red-600 py-3 px-6 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-black tracking-wider text-slate-900 flex items-center gap-2">
-                <span class="text-red-600">■</span> ARTANA C.F.
+            <h1 class="text-xl font-black tracking-widest text-white flex items-center gap-3">
+                <img src="ESC_ARTANA C.F..png" alt="Escudo Artana C.F." class="w-10 h-12 escudo-oficial">
+                ARTANA C.F.
             </h1>
-            <div class="space-x-8 flex items-center">
-                <a href="#inicio" class="text-gray-600 text-xs font-bold uppercase tracking-wider hover:text-red-600 transition">Inicio</a>
-                <a href="#resultados" class="text-gray-600 text-xs font-bold uppercase tracking-wider hover:text-red-600 transition">Resultados y Tabla</a>
-                <a href="#asistente-ia" class="bg-[#ff4b4b] text-white text-[11px] uppercase tracking-widest px-5 py-2.5 rounded font-bold hover:bg-red-600 shadow-sm transition">Asistente IA</a>
+            <div class="space-x-6 hidden md:flex items-center">
+                <a href="#inicio" class="text-gray-300 text-xs font-bold uppercase tracking-wider hover:text-white transition">Inicio</a>
+                <a href="#resultados" class="text-gray-300 text-xs font-bold uppercase tracking-wider hover:text-white transition">Resultados</a>
+                <a href="#clasificacion" class="text-gray-300 text-xs font-bold uppercase tracking-wider hover:text-white transition">Clasificación FFCV</a>
             </div>
         </div>
     </nav>
 
-    <header id="inicio" class="container mx-auto text-center my-8 px-4">
-        <h2 class="text-3xl font-black text-slate-950 tracking-tight uppercase mb-1">Bienvenidos a la Fortaleza del Artana C.F.</h2>
+    <header id="inicio" class="container mx-auto text-center mt-10 mb-8 px-4 flex flex-col items-center">
+        <img src="ESC_ARTANA C.F..png" alt="Escudo Artana C.F." class="w-24 h-28 escudo-oficial mb-4">
+        <h2 class="text-3xl font-black text-slate-900 tracking-tight uppercase mb-1">Bienvenidos a la Fortaleza del Artana C.F.</h2>
         <p class="text-gray-500 font-bold text-xs tracking-wider uppercase">Amateur — Tercera FFCV — Grupo 3 (Temporada 2025/2026)</p>
     </header>
 
-    <main id="resultados" class="container mx-auto px-4 gap-6 grid grid-cols-1 lg:grid-cols-3 flex-grow items-start mb-12">
+    <main class="container mx-auto px-4 gap-6 grid grid-cols-1 lg:grid-cols-3 flex-grow items-start mb-12">
         
-        <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-200 p-1 overflow-x-auto">
+        <div id="resultados" class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-200 p-2 overflow-x-auto">
+            <div class="px-4 py-3 border-b border-gray-100 flex items-center gap-2">
+                <i class="fas fa-futbol text-slate-800"></i>
+                <h3 class="font-black text-slate-900 uppercase tracking-tight text-sm">Últimos Partidos FFCV</h3>
+            </div>
             <table class="w-full min-w-[760px] text-left text-xs border-collapse">
                 <thead>
                     <tr class="font-bold text-gray-400 uppercase bg-[#fafafa] border-b border-gray-200 text-[10px] tracking-wider">
-                        <th class="py-3.5 px-4 text-center w-24">Fecha</th>
-                        <th class="py-3.5 px-2 text-center w-20">Horario</th>
-                        <th class="py-3.5 px-4 text-center">Partido de la Jornada</th>
-                        <th class="py-3.5 px-4 text-left w-36">Competición</th>
-                        <th class="py-3.5 px-4 text-center w-16">Estado</th>
-                        <th class="py-3.5 px-4 text-center w-20">Sync</th>
+                        <th class="py-3 px-4 text-center w-24">Jornada</th>
+                        <th class="py-3 px-4 text-center">Encuentro Oficial</th>
+                        <th class="py-3 px-4 text-center w-24">Resultado</th>
+                        <th class="py-3 px-4 text-left">Estado / Sync</th>
                     </tr>
                 </thead>
                 <tbody id="tabla-resultados-body" class="divide-y divide-gray-100 text-slate-900 font-bold text-xs">
@@ -50,28 +61,23 @@
             </table>
         </div>
 
-        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-            <div class="flex justify-between items-center mb-3">
-                <h3 class="text-sm font-black uppercase text-slate-900 tracking-tight flex items-center gap-1.5">
-                    <i class="fas fa-trophy text-amber-500"></i> Clasificación G3
+        <div id="clasificacion" class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
+            <div class="flex justify-between items-center mb-4 border-b border-gray-100 pb-3">
+                <h3 class="text-sm font-black uppercase text-slate-900 tracking-tight flex items-center gap-2">
+                    <i class="fas fa-trophy text-amber-500 text-lg"></i> Clasificación G3
                 </h3>
-                <span id="status-badge" class="text-[9px] font-black text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 uppercase tracking-wider flex items-center gap-1">
-                    <i class="fas fa-spinner animate-spin text-[7px]"></i> Conectando...
+                <span id="status-badge" class="text-[9px] font-black text-amber-600 bg-amber-50 px-2.5 py-1 rounded-sm border border-amber-200 uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+                    <i class="fas fa-spinner animate-spin text-[8px]"></i> Conectando a FFCV...
                 </span>
-            </div>
-
-            <div class="flex gap-1.5 mb-4">
-                <button class="bg-[#ff4b4b] text-white text-[9px] font-black uppercase tracking-widest px-3 py-2 rounded shadow-sm flex-grow">TERCERA FFCV</button>
-                <button class="border border-gray-200 text-gray-400 text-[9px] font-black uppercase tracking-widest px-3 py-2 rounded bg-[#fafafa] flex-grow">GRUPO 3</button>
             </div>
             
             <table class="w-full text-xs text-left border-collapse">
                 <thead>
                     <tr class="text-gray-400 font-bold uppercase border-b border-gray-200 text-[9px] tracking-wider">
-                        <th class="py-1.5 w-7 text-center">POS</th>
-                        <th class="py-1.5 pl-1">EQUIPO</th>
-                        <th class="py-1.5 w-10 text-center font-black text-slate-950">PTS</th>
-                        <th class="py-1.5 w-8 text-center">PJ</th>
+                        <th class="py-2 w-8 text-center">POS</th>
+                        <th class="py-2 pl-2">EQUIPO</th>
+                        <th class="py-2 w-10 text-center font-black text-red-600">PTS</th>
+                        <th class="py-2 w-8 text-center">PJ</th>
                     </tr>
                 </thead>
                 <tbody id="tabla-clasificacion-body" class="divide-y divide-gray-100 font-bold text-[11px] text-gray-600">
@@ -80,70 +86,52 @@
         </div>
     </main>
 
-    <section id="asistente-ia" class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 max-w-4xl mx-auto w-full mb-12">
-        <div class="flex items-center gap-3 mb-4">
-            <div class="bg-[#ff4b4b] text-white p-3 rounded shadow-sm">
-                <i class="fas fa-robot text-lg"></i>
-            </div>
-            <div>
-                <h3 class="text-base font-black text-slate-950 uppercase tracking-tight">Analista Virtual Artana C.F.</h3>
-                <p class="text-xs text-gray-500 font-medium">Pregúntame sobre los datos integrados en vivo desde la FFCV.</p>
-            </div>
-        </div>
-        <div id="chat-box" class="bg-[#fafafa] p-4 rounded border border-gray-200 h-36 overflow-y-auto mb-4 font-mono text-xs space-y-2 text-gray-600">
-            <div><span class="text-red-600 font-bold">[IA]:</span> Base de datos sincronizada. Artana C.F. está colíder con 57 puntos compitiendo al más alto nivel.</div>
-        </div>
-        <div class="flex gap-2">
-            <input type="text" id="user-query" placeholder="Ej: ¿A cuántos puntos estamos del líder?" class="flex-grow bg-white border border-gray-300 rounded px-4 py-2.5 text-xs text-slate-950 focus:outline-none focus:border-red-500 font-semibold">
-            <button id="btn-preguntar" class="bg-slate-950 hover:bg-slate-900 text-white font-bold text-[11px] uppercase tracking-wider px-6 py-2.5 rounded shadow-sm transition flex items-center gap-2">
-                <span>Enviar</span><i class="fas fa-paper-plane text-[9px]"></i>
-            </button>
-        </div>
-    </section>
-
-    <footer class="bg-white text-center py-5 text-gray-400 text-[10px] border-t border-gray-200 font-black tracking-widest uppercase">
-        &copy; 2026 Artana C.F. — Portal Web Automatizado de Tercera FFCV.
+    <footer class="bg-[#1a202c] text-center py-6 text-gray-400 text-[10px] font-black tracking-widest uppercase">
+        <img src="ESC_ARTANA C.F..png" alt="Artana" class="w-6 h-8 mx-auto mb-2 opacity-50 grayscale hover:grayscale-0 transition">
+        &copy; 2026 Artana C.F. — Sincronizado automáticamente con Novanet / FFCV.
     </footer>
 
     <script>
-        // URL OFICIAL DE LA FFCV (Grupo 3 Tercera FFCV - ID de Competición Real)
+        // URL Oficial de la competición (Tercera FFCV Grupo 3)
         const URL_FFCV_OFICIAL = "https://ffcv.es/wp/competiciones/?act=competicion&id_competicion=220263"; 
         const CORS_PROXY = "https://api.allorigins.win/get?url=";
 
+        // Base de datos inteligente de escudos (Integra tu escudo local)
         const MAPA_ESCUDOS = {
-            "artana": "assets/escudos/artana.png", "estivella": "assets/escudos/estivella.png",
-            "saguntino": "assets/escudos/saguntino.png", "faura": "assets/escudos/faura.png",
-            "caudiel": "assets/escudos/caudiel.png", "nules": "assets/escudos/nules.png",
-            "vilavella": "assets/escudos/vilavella.png", "mare nostrum": "assets/escudos/marenostrum.png",
-            "gilet": "assets/escudos/gilet.png", "jérica": "assets/escudos/jerica.png",
-            "almenara": "assets/escudos/almenara.png", "vila-real": "assets/escudos/vilareal.png",
-            "castellnovo": "assets/escudos/castellnovo.png", "benicató": "assets/escudos/benicato.png",
-            "biensa": "assets/escudos/biensa.png"
+            "artana": "ESC_ARTANA C.F..png", 
+            "estivella": "assets/escudos/estivella.png", "saguntino": "assets/escudos/saguntino.png", 
+            "faura": "assets/escudos/faura.png", "caudiel": "assets/escudos/caudiel.png", 
+            "nules": "assets/escudos/nules.png", "vilavella": "assets/escudos/vilavella.png", 
+            "mare nostrum": "assets/escudos/marenostrum.png", "gilet": "assets/escudos/gilet.png", 
+            "jérica": "assets/escudos/jerica.png", "almenara": "assets/escudos/almenara.png", 
+            "vila-real": "assets/escudos/vilareal.png", "castellnovo": "assets/escudos/castellnovo.png", 
+            "benicató": "assets/escudos/benicato.png", "biensa": "assets/escudos/biensa.png"
         };
 
-        // Cache Estática Inicial Exacta (Datos Reales de la Jornada 27 actual)
+        // DATOS ESTRICTOS BASADOS EN TU CAPTURA DE PANTALLA OFICIAL (Jornada 27)
+        // Esto actúa como "Caché Cero" por si la web de la federación se cae un fin de semana.
         const cacheLocalSegura = {
             partidos: [
-                { fecha: "17.05.2026", dia: "DOM", hora: "18:00", local: "Biensa C.F. 'A'", visitante: "Artana C.F.", golesL: 0, golesV: 3, detalle: "Goles: Isma, Font, S. Amiguet", estado: "Fin" },
-                { fecha: "10.05.2026", dia: "DOM", hora: "18:00", local: "Artana C.F.", visitante: "E.F. Benicató", golesL: 4, golesV: 1, detalle: "Goles: Khalid (2), Carda, Solaz", estado: "Fin" },
-                { fecha: "03.05.2026", dia: "DOM", hora: "17:00", local: "C.F. Castellnovo", visitante: "Artana C.F.", golesL: 1, golesV: 2, detalle: "Goles: Font, Carda", estado: "Fin" }
+                { jornada: "Jornada 27", local: "Artana C.F.", visitante: "C.F. Nules 'B'", marcador: "2 - 1", estado: "Finalizado" },
+                { jornada: "Jornada 26", local: "La Vilavella C.F. 'A'", visitante: "Artana C.F.", marcador: "0 - 0", estado: "Finalizado" },
+                { jornada: "Jornada 25", local: "Artana C.F.", visitante: "C.F. Mare Nostrum", marcador: "1 - 1", estado: "Finalizado" }
             ],
             clasificacion: [
-                { pos: 1, name: "Estivella C.F. 'A'", pts: 62, pj: 27 },
-                { pos: 2, name: "Artana C.F.", pts: 57, pj: 27 },
-                { pos: 3, name: "At. Saguntino 'B'", pts: 51, pj: 27 },
-                { pos: 4, name: "C.F. Faura", pts: 46, pj: 27 },
-                { pos: 5, name: "C.F. Nules 'B'", pts: 44, pj: 27 },
-                { pos: 6, name: "Club At. Caudiel", pts: 41, pj: 27 },
-                { pos: 7, name: "La Vilavella C.F. 'A'", pts: 39, pj: 27 },
-                { pos: 8, name: "C.F. Mare Nostrum Pto.", pts: 35, pj: 27 },
-                { pos: 9, name: "C.D. Jérica 'B'", pts: 31, pj: 27 },
-                { pos: 10, name: "C.F. At. Gilet 'B'", pts: 29, pj: 27 },
-                { pos: 11, name: "Club Almenara Atlètic 'B'", pts: 26, pj: 27 },
-                { pos: 12, name: "Esportiu Vila-real 'B'", pts: 23, pj: 27 },
-                { pos: 13, name: "C.F. Castellnovo", pts: 19, pj: 27 },
-                { pos: 14, name: "Biensa C.F. 'A'", pts: 11, pj: 27 },
-                { pos: 15, name: "E.F. Benicató", pts: 6, pj: 27 }
+                { pos: 1, name: "Estivella C.F. 'A'", pts: 77, pj: 27 },
+                { pos: 2, name: "At. Saguntino 'B'", pts: 68, pj: 27 },
+                { pos: 3, name: "C.F. Faura", pts: 59, pj: 27 },
+                { pos: 4, name: "Club At. Caudiel", pts: 46, pj: 27 },
+                { pos: 5, name: "C.F. Nules 'B'", pts: 45, pj: 27 },
+                { pos: 6, name: "Artana C.F.", pts: 44, pj: 27 }, // Posición confirmada por captura
+                { pos: 7, name: "La Vilavella C.F. 'A'", pts: 40, pj: 27 },
+                { pos: 8, name: "C.F. Mare Nostrum Pto. Sagunto 'A'", pts: 38, pj: 27 },
+                { pos: 9, name: "C.F. At. Gilet 'B'", pts: 35, pj: 26 },
+                { pos: 10, name: "C.D. Jérica 'B'", pts: 32, pj: 27 },
+                { pos: 11, name: "Club Almenara Atlètic 'B'", pts: 28, pj: 27 },
+                { pos: 12, name: "Esportiu Vila-real 'B'", pts: 28, pj: 27 },
+                { pos: 13, name: "C.F. Castellnovo", pts: 16, pj: 26 },
+                { pos: 14, name: "E.F. Benicató", pts: 6, pj: 27 },
+                { pos: 15, name: "Biensa C.F. 'A'", pts: 6, pj: 28 }
             ]
         };
 
@@ -152,61 +140,60 @@
             for (const key in MAPA_ESCUDOS) {
                 if (norm.includes(key)) return MAPA_ESCUDOS[key];
             }
-            return `https://placehold.co/20?text=${nombre.substring(0,2).toUpperCase()}`;
+            return `https://placehold.co/24?text=${nombre.substring(0,2).toUpperCase()}`;
         }
 
         function render(datos) {
-            // 1. Renderizado automático del Historial de Partidos
+            // Render Partidos
             const tbodyP = document.getElementById("tabla-resultados-body");
             tbodyP.innerHTML = "";
             datos.partidos.forEach(p => {
                 const esL = p.local.toLowerCase().includes("artana");
                 const esV = p.visitante.toLowerCase().includes("artana");
                 tbodyP.innerHTML += `
-                    <tr class="hover:bg-gray-50/60 transition-colors bg-white">
-                        <td class="py-4 px-4 text-center text-[10px] text-gray-400 uppercase">${p.dia}<br><span class="font-black text-slate-950 text-xs">${p.fecha}</span></td>
-                        <td class="py-4 px-2 text-center font-black">${p.hora}</td>
+                    <tr class="hover:bg-gray-50 transition-colors bg-white">
+                        <td class="py-4 px-4 text-center text-[10px] text-gray-500 uppercase font-black">${p.jornada}</td>
                         <td class="py-4 px-4">
-                            <div class="flex justify-center items-center gap-3">
-                                <div class="flex items-center justify-end gap-2 w-40">
-                                    <span class="uppercase text-xs ${esL ? 'text-slate-950 font-black':'text-gray-400 font-medium'} truncate">${p.local}</span>
-                                    <img src="${buscarEscudo(p.local)}" class="w-5 h-5 object-contain" alt="">
+                            <div class="flex justify-center items-center gap-4">
+                                <div class="flex items-center justify-end gap-2 w-48">
+                                    <span class="uppercase text-xs ${esL ? 'text-slate-900 font-black':'text-gray-500 font-medium'} truncate">${p.local}</span>
+                                    <img src="${buscarEscudo(p.local)}" class="w-6 h-6 object-contain ${esL ? 'drop-shadow-md':''}" alt="">
                                 </div>
-                                <span class="bg-[#ff4b4b] text-white font-black text-xs px-2.5 py-1 rounded-sm shadow-sm tracking-widest text-center min-w-[46px]">${p.golesL} - ${p.golesV}</span>
-                                <div class="flex items-center justify-start gap-2 w-40">
-                                    <img src="${buscarEscudo(p.visitante)}" class="w-5 h-5 object-contain" alt="">
-                                    <span class="uppercase text-xs ${esV ? 'text-slate-950 font-black':'text-gray-400 font-medium'} truncate">${p.visitante}</span>
+                                <span class="bg-slate-900 text-white font-black text-sm px-3 py-1 rounded shadow-sm tracking-widest text-center min-w-[50px]">${p.marcador}</span>
+                                <div class="flex items-center justify-start gap-2 w-48">
+                                    <img src="${buscarEscudo(p.visitante)}" class="w-6 h-6 object-contain ${esV ? 'drop-shadow-md':''}" alt="">
+                                    <span class="uppercase text-xs ${esV ? 'text-slate-900 font-black':'text-gray-500 font-medium'} truncate">${p.visitante}</span>
                                 </div>
                             </div>
-                            ${p.detalle ? `<div class="text-[10px] text-gray-400 text-center mt-2 font-normal"><i class="fas fa-futbol text-gray-300"></i> ${p.detalle}</div>`:''}
                         </td>
-                        <td class="py-4 px-4 text-gray-500 font-semibold text-[11px] uppercase">Tercera FFCV G3</td>
-                        <td class="py-4 px-4 text-center text-emerald-600 font-black text-[10px] uppercase"><span class="bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">${p.estado}</span></td>
-                        <td class="py-4 px-4 text-center text-emerald-500"><i class="fas fa-check-circle text-[11px]"></i></td>
+                        <td class="py-4 px-4 text-center">
+                            <span class="bg-emerald-50 text-emerald-600 font-black text-[9px] uppercase px-2 py-1 rounded border border-emerald-200">${p.estado}</span>
+                        </td>
                     </tr>`;
             });
 
-            // 2. Renderizado automático de la Clasificación Completa de la Liga
+            // Render Clasificación Exacta
             const tbodyC = document.getElementById("tabla-clasificacion-body");
             tbodyC.innerHTML = "";
             datos.clasificacion.forEach(e => {
                 const esA = e.name.toLowerCase().includes("artana");
                 tbodyC.innerHTML += `
-                    <tr class="${esA ? 'bg-red-50/80 border-l-4 border-[#ff4b4b]' : 'bg-white'}">
-                        <td class="py-2 text-center ${esA ? 'font-black text-red-600 text-xs' : 'font-extrabold text-gray-400'}">${e.pos}</td>
-                        <td class="py-2 pl-1 truncate flex items-center gap-2 ${esA ? 'font-black text-slate-950':'text-slate-700 font-medium'}">
-                            <img src="${buscarEscudo(e.name)}" class="w-4 h-4 object-contain" alt="">
-                            <span>${e.name}</span>
+                    <tr class="${esA ? 'bg-amber-50/50 border-l-4 border-amber-400' : 'bg-white hover:bg-gray-50 transition-colors'}">
+                        <td class="py-2.5 text-center ${esA ? 'font-black text-amber-600 text-xs' : 'font-extrabold text-gray-400'}">${e.pos}</td>
+                        <td class="py-2.5 pl-2 flex items-center gap-2 ${esA ? 'font-black text-slate-900':'text-slate-700 font-semibold'}">
+                            <img src="${buscarEscudo(e.name)}" class="w-5 h-5 object-contain ${esA ? 'drop-shadow-sm':''}" alt="">
+                            <span class="truncate uppercase text-[10px] tracking-wide">${e.name}</span>
                         </td>
-                        <td class="py-2 text-center font-black ${esA ? 'text-red-600 text-sm':'text-slate-950 text-xs'}">${e.pts}</td>
-                        <td class="py-2 text-center ${esA ? 'font-black text-slate-950':'text-gray-400 font-normal'}">${e.pj}</td>
+                        <td class="py-2.5 text-center font-black ${esA ? 'text-red-600 text-sm':'text-slate-900 text-xs'}">${e.pts}</td>
+                        <td class="py-2.5 text-center ${esA ? 'font-black text-slate-900':'text-gray-400 font-normal'}">${e.pj}</td>
                     </tr>`;
             });
         }
 
-        // PARSER SÉNIOR: Entra de forma invisible en Novanet, extrae las tablas y los resultados
-        async function sincronizarConFederacion() {
+        // MOTOR PARSER AUTOMÁTICO (Lee en directo la web de la federación)
+        async function sincronizarEnVivo() {
             try {
+                // Hacemos ping a la base de datos de la FFCV usando un proxy para saltar el bloqueo de seguridad
                 const res = await fetch(CORS_PROXY + encodeURIComponent(URL_FFCV_OFICIAL));
                 if (!res.ok) throw new Error();
                 const json = await res.json();
@@ -214,86 +201,74 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(json.contents, "text/html");
 
-                // 1. EXTRACCIÓN DE LA CLASIFICACIÓN (Mapeando selectores reales de Novanet)
-                const tablaClasificacion = doc.querySelector(".clasi-table, .tabla_clasificacion, table[class*='clasificacio']");
-                let clasificacionExtraida = [];
+                // 1. EXTRAER LA CLASIFICACIÓN EN DIRECTO (Buscando las clases de Novanet)
+                const tabla = doc.querySelector(".clasi-table, .tabla_clasificacion, table");
+                let clasiActualizada = [];
 
-                if (tablaClasificacion) {
-                    const filas = tablaClasificacion.querySelectorAll("tbody tr");
+                if (tabla) {
+                    const filas = tabla.querySelectorAll("tbody tr");
                     filas.forEach((fila, idx) => {
                         const celdas = fila.querySelectorAll("td");
                         if (celdas.length >= 4) {
-                            // Limpieza del texto extraído de la federación
-                            const pos = parseInt(celdas[0].innerText.replace("º","").trim()) || (idx + 1);
                             const name = celdas[1].innerText.trim();
-                            const pts = parseInt(celdas[2].innerText.trim()) || 0;
-                            const pj = parseInt(celdas[3].innerText.trim()) || 0;
-                            
                             if (name && !name.toLowerCase().includes("equipo")) {
-                                clasificacionExtraida.push({ pos, name, pts, pj });
-                            }
-                        }
-                    });
-                }
-
-                // 2. EXTRACCIÓN DEL PARTIDO DE LA JORNADA ACTUAL EN DIRECTO
-                const filasResultados = doc.querySelectorAll(".ejornada tr, .tabla_resultados tr, tr[class*='partido']");
-                let partidosExtraidos = [];
-
-                if (filasResultados && filasResultados.length > 0) {
-                    filasResultados.forEach(fila => {
-                        const celdas = fila.querySelectorAll("td");
-                        if (celdas.length >= 4) {
-                            // Localizar las celdas donde está el partido y los goles
-                            let textoFila = fila.innerText.toLowerCase();
-                            
-                            if (textoFila.includes("artana")) {
-                                // Buscamos los nombres de los equipos y el marcador intercalado
-                                const local = celdas[1] ? celdas[1].innerText.trim() : "";
-                                const marcador = celdas[2] ? celdas[2].innerText.trim() : "0 - 0";
-                                const visitante = celdas[3] ? celdas[3].innerText.trim() : "";
-                                
-                                const goles = marcador.split("-");
-                                const golesL = goles[0] ? parseInt(goles[0].trim()) : 0;
-                                const golesV = goles[1] ? parseInt(goles[1].trim()) : 0;
-
-                                partidosExtraidos.push({
-                                    fecha: "En Vivo", dia: "FÚTBOL", hora: "Fin",
-                                    local, visitante, golesL, golesV,
-                                    detalle: "Marcador oficial extraído en tiempo real desde la FFCV", estado: "Fin"
+                                clasiActualizada.push({
+                                    pos: parseInt(celdas[0].innerText.replace(/\D/g, '')) || (idx + 1),
+                                    name: name,
+                                    pts: parseInt(celdas[2].innerText.trim()) || 0,
+                                    pj: parseInt(celdas[3].innerText.trim()) || 0
                                 });
                             }
                         }
                     });
                 }
 
-                // Ensamblar la respuesta y actualizar la interfaz si el raspado funcionó con éxito
-                let datosFinales = { ...cacheLocalSegura };
-                if (clasificacionExtraida.length > 0) datosFinales.clasificacion = clasificacionExtraida;
-                
-                // Si la FFCV devolvió partidos válidos en directo, los ponemos arriba en la lista
-                if (partidosExtraidos.length > 0) {
-                    datosFinales.partidos = [...partidosExtraidos, ...cacheLocalSegura.partidos.slice(0, 2)];
+                // 2. EXTRAER ÚLTIMOS RESULTADOS DEL ARTANA EN DIRECTO
+                const filasResultados = doc.querySelectorAll(".ejornada tr, .tabla_resultados tr, table.resultados tr");
+                let partidosActualizados = [];
+
+                if (filasResultados) {
+                    filasResultados.forEach(fila => {
+                        const texto = fila.innerText.toLowerCase();
+                        if (texto.includes("artana")) {
+                            const celdas = fila.querySelectorAll("td");
+                            if (celdas.length >= 4) {
+                                partidosActualizados.push({
+                                    jornada: "Sincronizado",
+                                    local: celdas[1] ? celdas[1].innerText.trim() : "Local",
+                                    marcador: celdas[2] ? celdas[2].innerText.trim() : "- - -",
+                                    visitante: celdas[3] ? celdas[3].innerText.trim() : "Visitante",
+                                    estado: "Oficial FFCV"
+                                });
+                            }
+                        }
+                    });
                 }
+
+                // Si la extracción de la federación tuvo éxito, sobreescribimos los datos fijos
+                let datosFinales = { ...cacheLocalSegura };
+                if (clasiActualizada.length > 0) datosFinales.clasificacion = clasiActualizada;
+                if (partidosActualizados.length > 0) datosFinales.partidos = partidosActualizados.slice(0, 5); // Mostrar max 5
 
                 render(datosFinales);
 
-                // Cambiar el badge a modo online con éxito
+                // Indicador de éxito
                 const badge = document.getElementById("status-badge");
-                badge.className = "text-[9px] font-black text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 uppercase tracking-wider flex items-center gap-1";
-                badge.innerHTML = `<i class="fas fa-circle text-[5px] animate-pulse"></i> Sincronizado FFCV`;
+                badge.className = "text-[9px] font-black text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-sm border border-emerald-200 uppercase tracking-wider flex items-center gap-1.5 shadow-sm";
+                badge.innerHTML = `<i class="fas fa-satellite-dish animate-pulse text-[10px]"></i> Datos Oficiales FFCV`;
 
             } catch (err) {
-                console.log("Servidor FFCV saturado. Ejecutando con los datos estables de la jornada actual.");
+                console.log("No se pudo conectar en directo. Mostrando la última captura validada de la Jornada 27.");
                 const badge = document.getElementById("status-badge");
-                badge.className = "text-[9px] font-black text-gray-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200 uppercase tracking-wider flex items-center gap-1";
-                badge.innerHTML = `<i class="fas fa-database"></i> Local Caché`;
+                badge.className = "text-[9px] font-black text-slate-500 bg-slate-100 px-2.5 py-1 rounded-sm border border-slate-200 uppercase tracking-wider flex items-center gap-1.5 shadow-sm";
+                badge.innerHTML = `<i class="fas fa-database"></i> Caché de Respaldo`;
             }
         }
 
+        // Ejecutar sistema
         document.addEventListener("DOMContentLoaded", () => {
-            render(cacheLocalSegura); // Paso 1: Pinta al instante el estado real actual (57 puntos)
-            sincronizarConFederacion(); // Paso 2: Ejecuta el raspador automático contra la FFCV en segundo plano
+            render(cacheLocalSegura); // Paso 1: Pinta exactamente los 44 pts y el escudo
+            sincronizarEnVivo();      // Paso 2: Ejecuta el robot para actualizar automáticamente si hay cambios en la federación
         });
     </script>
 </body>
