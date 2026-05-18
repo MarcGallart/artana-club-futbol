@@ -8,72 +8,76 @@
 </head>
 <body>
 
-    <header class="header-nav">
-        <div class="logo-container">
-            <img src="ESC_ARTANA%20C.F..png" alt="Escudo Artana C.F." class="mini-escudo">
-            <span class="brand-title">ARTANA C.F.</span>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="brand">
+                <img src="ESC_ARTANA C.F..png" alt="Escudo Artana C.F." class="mini-logo">
+                <h1>ARTANA C.F.</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#inicio" class="active">INICIO</a>
+                <a href="#calendario">RESULTADOS</a>
+                <a href="#clasificacion">CLASIFICACIÓN FFCV</a>
+            </nav>
         </div>
-        <nav class="nav-links">
-            <a href="#">INICIO</a>
-            <a href="#">RESULTADOS</a>
-            <a href="#">CLASIFICACIÓN FFCV</a>
-        </nav>
     </header>
 
-    <main class="main-content">
-        
-        <section class="hero-section">
-            <img src="ESC_ARTANA%20C.F..png" alt="Artana C.F." class="main-escudo">
-            <h1>BIENVENIDOS A LA FORTALEZA DEL ARTANA C.F.</h1>
-            <p class="subtitle">AMATEUR — TERCERA FFCV — GRUPO 3</p>
-        </section>
-
-        <div class="tables-grid">
+    <main class="hero-section" id="inicio">
+        <div class="hero-container">
+            <div class="logo-wrapper">
+                <img src="ESC_ARTANA C.F..png" alt="Escudo Grande Artana C.F." class="main-logo">
+            </div>
             
-            <div class="card-table">
-                <div class="card-header">
-                    <h2>⚽ CALENDARIO Y RESULTADOS</h2>
-                    <span class="sync-status">🔄 SINCRONIZACIÓN SIMULTÁNEA FFCV</span>
-                </div>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>JORNADA / FECHA</th>
-                                <th>ENCUENTRO OFICIAL</th>
-                                <th>RESULTADO / HORA</th>
-                                <th>ESTADO</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabla-partidos">
-                            </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="card-table">
-                <div class="card-header">
-                    <h2>🔢 CLASIFICACIÓN G3</h2>
-                    <span class="db-status">✨ CONECTANDO A FFCV...</span>
-                </div>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>POS</th>
-                                <th>EQUIPO</th>
-                                <th>PTS</th>
-                                <th>PJ</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabla-clasificacion">
-                            </tbody>
-                    </table>
-                </div>
-            </div>
-
+            <h2 class="main-title">BIENVENIDOS A LA FORTALEZA DEL ARTANA C.F.</h2>
+            <p class="subtitle">AMATEUR — TERCERA FFCV — GRUPO 3</p>
         </div>
     </main>
+
+    <section class="dashboard-grid">
+        
+        <div class="card" id="calendario">
+            <div class="card-header">
+                <h3>⚽ CALENDARIO Y RESULTADOS</h3>
+                <span class="sync-text"><span class="dot-green"></span> SINCRONIZACIÓN SIMULTÁNEA FFCV</span>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>JORNADA / FECHA</th>
+                            <th>ENCUENTRO OFICIAL</th>
+                            <th>RESULTADO / HORA</th>
+                            <th>ESTADO</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-partidos">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card" id="clasificacion">
+            <div class="card-header">
+                <h3>🔢 CLASIFICACIÓN G3</h3>
+                <span class="sync-badge">CONECTADO A FFCV...</span>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>POS</th>
+                            <th>EQUIPO</th>
+                            <th>PTS</th>
+                            <th>PJ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-clasificacion">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
 
     <script src="script.js"></script>
 </body>
