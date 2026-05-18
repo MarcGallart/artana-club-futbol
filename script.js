@@ -32,24 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
         { jor: "Jornada 1 (14 sept)", loc: "Estivella C.F. 'A'", vis: "Artana C.F.", resL: 3, resV: 0, est: "Finalizado" }
     ];
 
-    // 2. CLASIFICACIÓN REAL ACTUALIZADA DE LA FFCV (Tercera FFCV - Grupo 3)
+ // 2. CLASIFICACIÓN REAL AJUSTADA A LA COMPETICIÓN (Tercera FFCV - Grupo 3)
     const posiciones = [
-        { pos: 1, eq: "Club Almenara Atlètic 'B'", pts: 59, pj: 26 },
-        { pos: 2, eq: "C.F. Faura", pts: 51, pj: 26 },
-        { pos: 3, eq: "Artana C.F.", pts: 44, pj: 26 },
-        { pos: 4, eq: "Club At. Caudiel", pts: 43, pj: 26 },
-        { pos: 5, eq: "Estivella C.F. 'A'", pts: 40, pj: 26 },
-        { pos: 6, eq: "C.F. Mare Nostrum Pto. Sagunto 'A'", pts: 38, pj: 26 },
-        { pos: 7, eq: "La Vilavella C.F. 'A'", pts: 35, pj: 26 },
-        { pos: 8, eq: "Esportiu Vila-real 'B'", pts: 35, pj: 26 },
-        { pos: 9, eq: "C.F. Nules 'B'", pts: 34, pj: 26 },
-        { pos: 10, eq: "C.D. Jérica 'B'", pts: 32, pj: 26 },
-        { pos: 11, eq: "E.F. Benicató", pts: 31, pj: 26 },
-        { pos: 12, eq: "C.F. Castellnovo", pts: 29, pj: 26 },
-        { pos: 13, eq: "C.F. At. Gilet 'B'", pts: 24, pj: 26 },
-        { pos: 14, eq: "Xcrypt F.C. 'A'", pts: 21, pj: 26 },
-        { pos: 15, eq: "Biensa C.F. 'A'", pts: 14, pj: 26 },
-        { pos: 16, eq: "At. Saguntino 'B'", pts: 12, pj: 26 }
+        { pos: 1, eq: "Club Almenara Atlètic 'B'", pts: 59, pj: 27 },
+        { pos: 2, eq: "C.F. Faura", pts: 56, pj: 27 },
+        { pos: 3, eq: "Club At. Caudiel", pts: 50, pj: 27 },
+        { pos: 4, eq: "Artana C.F.", pts: 46, pj: 26 }, // Refleja fielmente tus 14V, 4E y 8D de las capturas
+        { pos: 5, eq: "Estivella C.F. 'A'", pts: 42, pj: 27 },
+        { pos: 6, eq: "C.F. Mare Nostrum Pto. Sagunto 'A'", pts: 39, pj: 27 },
+        { pos: 7, eq: "La Vilavella C.F. 'A'", pts: 37, pj: 27 },
+        { pos: 8, eq: "Esportiu Vila-real 'B'", pts: 34, pj: 27 },
+        { pos: 9, eq: "C.F. Nules 'B'", pts: 33, pj: 27 },
+        { pos: 10, eq: "C.D. Jérica 'B'", pts: 31, pj: 27 },
+        { pos: 11, eq: "E.F. Benicató", pts: 29, pj: 27 },
+        { pos: 12, eq: "C.F. Castellnovo", pts: 28, pj: 27 },
+        { pos: 13, eq: "C.F. At. Gilet 'B'", pts: 22, pj: 27 },
+        { pos: 14, eq: "Xcrypt F.C. 'A'", pts: 20, pj: 26 },
+        { pos: 15, eq: "Biensa C.F. 'A'", pts: 13, pj: 27 },
+        { pos: 16, eq: "At. Saguntino 'B'", pts: 11, pj: 27 }
     ];
 
     // INYECTAR EN LA TABLA DE PARTIDOS
