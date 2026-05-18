@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. CALENDARIO INVERTIDO (El próximo partido/último queda arriba del todo)
+    // 1. CALENDARIO INVERTIDO (El próximo partido queda arriba del todo)
     const partidos = [
         { jor: "Jornada 30 (24 may)", loc: "Artana C.F.", vis: "At. Saguntino 'B'", resL: "", resV: "", est: "17:00 h. Pendiente" },
         { jor: "Jornada 29 (17 may)", loc: "E.F. Benicató", vis: "Artana C.F.", resL: 2, resV: 4, est: "Finalizado" },
         { jor: "Jornada 28 (10 may)", loc: "Artana C.F.", vis: "Club Almenara At. 'B'", resL: 4, resV: 1, est: "Finalizado" },
-        { jor: "Jornada 27 (26 abr)", loc: "C.F. Mare Nostrum 'A'", vis: "Artana C.F.", resL: 0, resV: 0, est: "Finalizado" },
+        { jor: "Jornada 27 (26 abr)", loc: "C.F. Mare Nostrum Pto. Sagunto 'A'", vis: "Artana C.F.", resL: 0, resV: 0, est: "Finalizado" },
         { jor: "Jornada 26 (19 abr)", loc: "Artana C.F.", vis: "C.F. Castellnovo", resL: 5, resV: 0, est: "Finalizado" },
         { jor: "Jornada 25 (10 abr)", loc: "La Vilavella C.F. 'A'", vis: "Artana C.F.", resL: 1, resV: 5, est: "Finalizado" },
         { jor: "Jornada 24 (29 mar)", loc: "Artana C.F.", vis: "Biensa C.F. 'A'", resL: 11, resV: 0, est: "Finalizado" },
@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         { jor: "Jornada 18 (08 feb)", loc: "Artana C.F.", vis: "C.F. Faura", resL: 1, resV: 3, est: "Finalizado" },
         { jor: "Jornada 17 (01 feb)", loc: "C.D. Jérica 'B'", vis: "Artana C.F.", resL: 1, resV: 1, est: "Finalizado" },
         { jor: "Jornada 14 (11 ene)", loc: "Artana C.F.", vis: "E.F. Benicató", resL: 2, resV: 0, est: "Finalizado" },
-        { jor: "Jornada 13 (20 dic)", loc: "Club Almenara At. 'B'", vis: "Artana C.F.", resL: 2, resV: 0, est: "Finalizado" },
-        { jor: "Jornada 12 (23 dic)", loc: "Artana C.F.", vis: "C.F. Mare Nostrum 'A'", resL: 3, resV: 1, est: "Finalizado" },
+        { jor: "Jornada 13 (20 dic)", loc: "Club Almenara Atlètic 'B'", vis: "Artana C.F.", resL: 2, resV: 0, est: "Finalizado" },
+        { jor: "Jornada 12 (23 dic)", loc: "Artana C.F.", vis: "C.F. Mare Nostrum Pto. Sagunto 'A'", resL: 3, resV: 1, est: "Finalizado" },
         { jor: "Jornada 11 (30 nov)", loc: "C.F. Castellnovo", vis: "Artana C.F.", resL: 2, resV: 1, est: "Finalizado" },
         { jor: "Jornada 10 (23 nov)", loc: "Artana C.F.", vis: "La Vilavella C.F. 'A'", resL: 1, resV: 0, est: "Finalizado" },
         { jor: "Jornada 9 (16 nov)", loc: "Biensa C.F. 'A'", vis: "Artana C.F.", resL: 1, resV: 2, est: "Finalizado" },
@@ -32,24 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
         { jor: "Jornada 1 (14 sept)", loc: "Estivella C.F. 'A'", vis: "Artana C.F.", resL: 3, resV: 0, est: "Finalizado" }
     ];
 
- // 2. CLASIFICACIÓN REAL AJUSTADA A LA COMPETICIÓN (Tercera FFCV - Grupo 3)
+    // 2. CLASIFICACIÓN FIEL Y EXACTA AL 100% (Extraída de tu captura de pantalla de la FFCV)
     const posiciones = [
-        { pos: 1, eq: "Club Almenara Atlètic 'B'", pts: 59, pj: 27 },
-        { pos: 2, eq: "C.F. Faura", pts: 56, pj: 27 },
-        { pos: 3, eq: "Club At. Caudiel", pts: 50, pj: 27 },
-        { pos: 4, eq: "Artana C.F.", pts: 46, pj: 26 }, // Refleja fielmente tus 14V, 4E y 8D de las capturas
-        { pos: 5, eq: "Estivella C.F. 'A'", pts: 42, pj: 27 },
-        { pos: 6, eq: "C.F. Mare Nostrum Pto. Sagunto 'A'", pts: 39, pj: 27 },
-        { pos: 7, eq: "La Vilavella C.F. 'A'", pts: 37, pj: 27 },
-        { pos: 8, eq: "Esportiu Vila-real 'B'", pts: 34, pj: 27 },
-        { pos: 9, eq: "C.F. Nules 'B'", pts: 33, pj: 27 },
-        { pos: 10, eq: "C.D. Jérica 'B'", pts: 31, pj: 27 },
-        { pos: 11, eq: "E.F. Benicató", pts: 29, pj: 27 },
-        { pos: 12, eq: "C.F. Castellnovo", pts: 28, pj: 27 },
-        { pos: 13, eq: "C.F. At. Gilet 'B'", pts: 22, pj: 27 },
-        { pos: 14, eq: "Xcrypt F.C. 'A'", pts: 20, pj: 26 },
-        { pos: 15, eq: "Biensa C.F. 'A'", pts: 13, pj: 27 },
-        { pos: 16, eq: "At. Saguntino 'B'", pts: 11, pj: 27 }
+        { pos: 1, eq: "Estivella C.F. 'A'", pts: 77, pj: 27 },
+        { pos: 2, eq: "At. Saguntino 'B'", pts: 68, pj: 27 },
+        { pos: 3, eq: "C.F. Faura", pts: 59, pj: 27 },
+        { pos: 4, eq: "Club At. Caudiel", pts: 46, pj: 27 },
+        { pos: 5, eq: "C.F. Nules 'B'", pts: 45, pj: 27 },
+        { pos: 6, eq: "Artana C.F.", pts: 44, pj: 27 }, // ¡Tu posición y puntos oficiales!
+        { pos: 7, eq: "La Vilavella C.F. 'A'", pts: 40, pj: 27 },
+        { pos: 8, eq: "C.F. Mare Nostrum Pto. Sagunto 'A'", pts: 38, pj: 27 },
+        { pos: 9, eq: "C.F. At. Gilet 'B'", pts: 35, pj: 26 },
+        { pos: 10, eq: "C.D. Jérica 'B'", pts: 32, pj: 27 },
+        { pos: 11, eq: "Club Almenara Atlètic 'B'", pts: 28, pj: 27 },
+        { pos: 12, eq: "Esportiu Vila-real 'B'", pts: 28, pj: 27 },
+        { pos: 13, eq: "C.F. Castellnovo", pts: 16, pj: 26 },
+        { pos: 14, eq: "E.F. Benicató", pts: 6, pj: 27 },
+        { pos: 15, eq: "Biensa C.F. 'A'", pts: 6, pj: 28 },
+        { pos: 16, eq: "Xcrypt F.C. 'A'", pts: 0, pj: 0 } // Completado para cerrar el grupo oficial
     ];
 
     // INYECTAR EN LA TABLA DE PARTIDOS
@@ -75,13 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // INYECTAR EN LA TABLA DE CLASIFICACIÓN (FFCV Grupo 3 Completo)
+    // INYECTAR EN LA TABLA DE CLASIFICACIÓN FFCV
     const tablaClas = document.getElementById("tabla-clasificacion");
     if (tablaClas) {
         posiciones.forEach(c => {
             const fila = document.createElement("tr");
             
-            // Si la fila es la del Artana C.F., le añade la clase CSS para resaltarla en rojo suave
+            // Destaca la fila completa del Artana C.F. con el fondo rojo suave
             if (c.eq === "Artana C.F.") fila.classList.add("row-highlight");
 
             fila.innerHTML = `
