@@ -1,6 +1,4 @@
-/* ==========================================
-   CONFIGURACIÓN GENERAL Y TIPOGRAFÍA
-   ========================================== */
+/* RESET GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +7,8 @@
 }
 
 body {
-    background-color: #f7f9fa;
-    color: #1a1a1a;
+    background-color: #f8fafc;
+    color: #1e293b;
 }
 
 /* ==========================================
@@ -22,7 +20,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at center, #ffffff 0%, #f4f4f4 100%);
+    background: radial-gradient(circle at center, #ffffff 0%, #f1f5f9 100%);
     padding: 20px;
 }
 
@@ -30,7 +28,7 @@ body {
     max-width: 600px;
     width: 100%;
     text-align: center;
-    animation: fadeIn 0.8s ease-out;
+    animation: fadeIn 0.6s ease-out;
 }
 
 .logo-wrapper {
@@ -42,15 +40,6 @@ body {
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 15px 30px rgba(204, 24, 24, 0.2));
-    transition: transform 0.3s ease;
-}
-
-.center-logo:hover {
-    transform: scale(1.03);
-}
-
-.text-wrapper {
-    margin-bottom: 40px;
 }
 
 .center-title {
@@ -65,7 +54,7 @@ body {
 .center-subtitle {
     font-size: 1rem;
     font-weight: 700;
-    color: #5c5c5c;
+    color: #64748b;
     letter-spacing: 2px;
 }
 
@@ -73,9 +62,9 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 40px;
 }
 
-/* BOTONES DE LA PORTADA */
 .btn {
     display: inline-block;
     padding: 16px 36px;
@@ -83,36 +72,33 @@ body {
     font-weight: 700;
     text-decoration: none;
     border-radius: 10px;
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
 }
 
 .btn-red {
     background-color: #cc1818;
     color: #ffffff;
-    box-shadow: 0 5px 15px rgba(204, 24, 24, 0.3);
+    box-shadow: 0 4px 12px rgba(204, 24, 24, 0.2);
 }
 
 .btn-red:hover {
     background-color: #b01414;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(204, 24, 24, 0.4);
+    transform: translateY(-2px);
 }
 
 .btn-outline {
     background-color: #ffffff;
     color: #cc1818;
     border: 2px solid #cc1818;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
 }
 
 .btn-outline:hover {
     background-color: #fff5f5;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(204, 24, 24, 0.1);
+    transform: translateY(-2px);
 }
 
 /* ==========================================
-   BARRA DE NAVEGACIÓN SUPERIOR (datos.html)
+   MENÚ SUPERIOR FIJO (Páginas de datos)
    ========================================== */
 .main-header {
     background-color: #cc1818;
@@ -122,7 +108,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .header-container {
@@ -152,75 +138,67 @@ body {
     color: #ffffff;
     font-weight: 800;
     font-size: 1.2rem;
-    letter-spacing: 0.5px;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
 }
 
 .nav-links a {
     color: #ffcccc;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: color 0.2s ease;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .btn-back {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 8px 14px;
-    border-radius: 6px;
-    color: #ffffff !important;
-}
-
-.btn-back:hover {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 /* ==========================================
-   ESTILOS DE LAS TABLAS Y CONTENEDORES (datos.html)
+   DISEÑO ESTRUCTURAL DE LAS TABLAS INDEPENDIENTES
    ========================================== */
 .dashboard-grid {
-    max-width: 1200px;
-    margin: 100px auto 40px auto; /* Margen superior amplio para evitar solapamientos con el menú */
+    max-width: 1100px;
+    margin: 100px auto 40px auto; /* Separación del menú fijo */
     padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
+    animation: fadeIn 0.4s ease-out;
 }
 
 .card {
     background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-    border: 1px solid #eef2f5;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid #e2e8f0;
     overflow: hidden;
 }
 
 .card-header {
-    padding: 18px 24px;
-    border-bottom: 2px solid #f1f4f7;
+    padding: 20px 24px;
+    border-bottom: 2px solid #f1f5f9;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fafbfc;
+    background-color: #f8fafc;
 }
 
 .card-header h3 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: #cc1818;
 }
 
-/* MAQUETACIÓN DE TABLA COMPLETA */
+/* FORMATO PREMIUM DE TABLAS */
 .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -229,85 +207,64 @@ body {
 table {
     width: 100%;
     border-collapse: collapse;
-    text-align: left;
 }
 
 th {
     background-color: #ffffff;
-    color: #7f8c8d;
+    color: #64748b;
     font-weight: 700;
-    padding: 14px 24px;
-    border-bottom: 2px solid #f1f4f7;
-    font-size: 0.75rem;
+    padding: 16px 24px;
+    border-bottom: 2px solid #edf2f7;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 td {
     padding: 16px 24px;
-    border-bottom: 1px solid #f1f4f7;
-    color: #2c3e50;
-    font-size: 0.9rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    font-size: 0.95rem;
 }
 
 tr:last-child td {
     border-bottom: none;
 }
 
-/* Sincronizaciones y Estados */
-.sync-text {
+tr:hover td {
+    background-color: #fffafb; /* Sutil cambio de color al pasar el ratón por la fila */
+}
+
+/* ESTADOS Y COMPONENTES */
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
     font-size: 0.75rem;
     font-weight: 700;
-    color: #7f8c8d;
-    display: flex;
-    align-items: center;
-    gap: 6px;
 }
+.badge.finalizado { background-color: #fee2e2; color: #cc1818; }
+.badge.pendiente { background-color: #f1f5f9; color: #475569; }
 
-.dot-green {
-    width: 8px;
-    height: 8px;
-    background-color: #2ecc71;
-    border-radius: 50%;
-    display: inline-block;
-}
+.txt-highlight { color: #cc1818; font-weight: 800; }
+.row-highlight { background-color: #fff5f5 !important; font-weight: 700; border-left: 4px solid #cc1818; }
 
-.sync-badge {
-    background-color: #cc1818;
-    color: #ffffff;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 700;
-}
+.sync-text { font-size: 0.75rem; font-weight: 700; color: #64748b; display: flex; align-items: center; gap: 6px; }
+.dot-green { width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; display: inline-block; }
+.sync-badge { background-color: #cc1818; color: #ffffff; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
 
-/* ==========================================
-   ANIMACIONES Y RESPONSIVE
-   ========================================== */
+/* ANIMACIÓN */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .nav-links {
-        gap: 15px;
-    }
-    .dashboard-grid {
-        margin-top: 150px;
-    }
-    .center-title {
-        font-size: 2rem;
-    }
-    .center-logo {
-        height: 180px;
-    }
-    .center-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
+    .header-container { flex-direction: column; gap: 10px; padding: 10px; }
+    .dashboard-grid { margin-top: 150px; }
+    .center-title { font-size: 2rem; }
+    .center-logo { height: 180px; }
+    .center-buttons { flex-direction: column; gap: 12px; }
+    .btn { width: 100%; }
 }
