@@ -1,4 +1,6 @@
-/* RESET GENERAL */
+/* ==========================================
+   CONFIGURACIÓN GENERAL Y TIPOGRAFÍA
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,44 +8,47 @@
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* PORTADA A PANTALLA COMPLETA TOTALMENTE CENTRADA */
+body {
+    background-color: #f7f9fa;
+    color: #1a1a1a;
+}
+
+/* ==========================================
+   ESTILOS DE LA PORTADA CENTRADA (index.html)
+   ========================================== */
 .fullscreen-cover {
     min-height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center;       /* Centrado Vertical */
-    justify-content: center;     /* Centrado Horizontal */
+    align-items: center;
+    justify-content: center;
     background: radial-gradient(circle at center, #ffffff 0%, #f4f4f4 100%);
     padding: 20px;
 }
 
-/* TARJETA CENTRAL ENVOLVENTE */
 .cover-card {
     max-width: 600px;
     width: 100%;
     text-align: center;
-    animation: fadeIn 0.8s ease-out; /* Efecto de aparición suave */
+    animation: fadeIn 0.8s ease-out;
 }
 
-/* DISEÑO DEL ESCUDO CENTRAL */
 .logo-wrapper {
     margin-bottom: 25px;
 }
 
 .center-logo {
-    height: 240px; /* Tamaño imponente del escudo */
+    height: 240px;
     width: auto;
     object-fit: contain;
-    /* Sombra elegante que hace resaltar el escudo sobre el fondo */
     filter: drop-shadow(0 15px 30px rgba(204, 24, 24, 0.2));
     transition: transform 0.3s ease;
 }
 
 .center-logo:hover {
-    transform: scale(1.03); /* Efecto dinámico al pasar el ratón */
+    transform: scale(1.03);
 }
 
-/* TEXTOS PRINCIPALES */
 .text-wrapper {
     margin-bottom: 40px;
 }
@@ -51,7 +56,7 @@
 .center-title {
     font-size: 2.8rem;
     font-weight: 900;
-    color: #cc1818; /* Rojo oficial */
+    color: #cc1818;
     letter-spacing: -1px;
     margin-bottom: 8px;
     line-height: 1.2;
@@ -64,14 +69,13 @@
     letter-spacing: 2px;
 }
 
-/* BOTONERA EN PARALELO */
 .center-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-/* ESTILO BASE DE LOS BOTONES */
+/* BOTONES DE LA PORTADA */
 .btn {
     display: inline-block;
     padding: 16px 36px;
@@ -82,7 +86,6 @@
     transition: all 0.25s ease;
 }
 
-/* Botón de Resultados (Rojo llamativo) */
 .btn-red {
     background-color: #cc1818;
     color: #ffffff;
@@ -95,7 +98,6 @@
     box-shadow: 0 8px 20px rgba(204, 24, 24, 0.4);
 }
 
-/* Botón de Clasificación (Blanco con borde rojo) */
 .btn-outline {
     background-color: #ffffff;
     color: #cc1818;
@@ -109,20 +111,195 @@
     box-shadow: 0 8px 20px rgba(204, 24, 24, 0.1);
 }
 
-/* ANIMACIÓN DE ENTRADA SUAVE */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* ==========================================
+   BARRA DE NAVEGACIÓN SUPERIOR (datos.html)
+   ========================================== */
+.main-header {
+    background-color: #cc1818;
+    border-bottom: 4px solid #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* ADAPTACIÓN AUTOMÁTICA PARA MÓVILES */
-@media (max-width: 600px) {
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mini-logo {
+    height: 40px;
+    width: auto;
+    background-color: #ffffff;
+    padding: 3px;
+    border-radius: 6px;
+}
+
+.brand-text {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #ffcccc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.btn-back {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: #ffffff !important;
+}
+
+.btn-back:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================
+   ESTILOS DE LAS TABLAS Y CONTENEDORES (datos.html)
+   ========================================== */
+.dashboard-grid {
+    max-width: 1200px;
+    margin: 100px auto 40px auto; /* Margen superior amplio para evitar solapamientos con el menú */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eef2f5;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 18px 24px;
+    border-bottom: 2px solid #f1f4f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafbfc;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #cc1818;
+}
+
+/* MAQUETACIÓN DE TABLA COMPLETA */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    background-color: #ffffff;
+    color: #7f8c8d;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-bottom: 2px solid #f1f4f7;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f1f4f7;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Sincronizaciones y Estados */
+.sync-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #7f8c8d;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot-green {
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.sync-badge {
+    background-color: #cc1818;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* ==========================================
+   ANIMACIONES Y RESPONSIVE
+   ========================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .dashboard-grid {
+        margin-top: 150px;
+    }
     .center-title {
         font-size: 2rem;
     }
@@ -130,12 +307,7 @@
         height: 180px;
     }
     .center-buttons {
-        flex-direction: column; /* Botones uno encima de otro en el móvil */
+        flex-direction: column;
         gap: 12px;
-        padding: 0 20px;
-    }
-    .btn {
-        width: 100%;
-        padding: 14px;
     }
 }
