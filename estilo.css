@@ -268,3 +268,29 @@ tr:hover td {
     .center-buttons { flex-direction: column; gap: 12px; }
     .btn { width: 100%; }
 }
+/* PUNTOS DE ESTADO DE PARTIDO (GANADO/EMPATE/PERDIDO) */
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px; /* Separación con el texto del resultado */
+    vertical-align: middle;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Colores dinámicos */
+.dot-win {
+    background-color: #2ecc71; /* Verde esmeralda para victorias */
+    box-shadow: 0 0 6px rgba(46, 204, 113, 0.4);
+}
+
+.dot-draw {
+    background-color: #f1c40f; /* Amarillo vibrante para empates */
+    box-shadow: 0 0 6px rgba(241, 196, 15, 0.4);
+}
+
+.dot-loss {
+    background-color: #e74c3c; /* Rojo suave para derrotas */
+    box-shadow: 0 0 6px rgba(231, 76, 60, 0.4);
+}
